@@ -439,12 +439,6 @@ class Activity extends StatelessWidget {
                   ),
                 ],
               ),
-              trailing: IconButton(
-              icon: Icon(Icons.more_vert),
-              onPressed: () {
-                
-              },
-            ),
           ),
           SizedBox(height: 12),
           ListTile(
@@ -476,12 +470,6 @@ class Activity extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-            trailing: IconButton(
-              icon: Icon(Icons.more_vert),
-              onPressed: () {
-                
-              },
             ),
           ),
         ],
