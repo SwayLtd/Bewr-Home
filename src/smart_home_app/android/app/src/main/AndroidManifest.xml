@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.smart_home_app">
-   <application
-        android:label="smart_home_app"
+    <!-- https://medium.com/@vaibhavi.rana99/change-application-name-and-icon-in-flutter-bebbec297c57 -->
+    <application
+        android:label="Pryve Home"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
