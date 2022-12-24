@@ -2,6 +2,7 @@
 //Firebase pour stocker des données à grande échelle ou de synchroniser des données entre plusieurs appareils
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'draggablereorderablegridview.dart';
 void main() {
   runApp(
@@ -19,12 +20,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentPageIndex = 0;
+  int _pageIndex = 0;
   final List<Widget> _pages = [Home(), Devices(), Automations(), Activity(), Settings(), Feedback(), Help(), Test()];
 
   void _selectPage(int index) {
     setState(() {
-      _currentPageIndex = index;
+      _pageIndex = index;
     });
   }
 
@@ -32,10 +33,19 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // https://stackoverflow.com/questions/52489458/how-to-change-status-bar-color-in-flutter
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Colors.white, // Status bar color
+
+          // Status bar brightness (optional)
+          statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+          statusBarBrightness: Brightness.light, // For iOS (dark icons)
+        ),
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
         title: Text('Pryve', style: TextStyle(color: Colors.black)),
-        leading: null,
+        elevation: 0.5, // configure the separator line under the AppBar
+        leading: null, // add a widget on the top right of the AppBar
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.person_outline),
@@ -68,14 +78,14 @@ class _HomePageState extends State<HomePage> {
                         bottom: 0,
                         child: Container(
                           height: 2,
-                          color: _currentPageIndex == 0 ? Colors.blue : Colors.transparent,
+                          color: _pageIndex == 0 ? Colors.blue : Colors.transparent,
                         ),
                       ),
                       TextButton(
                         child: Text(
                           'Home',
                           style: TextStyle(
-                            color: _currentPageIndex == 0 ? Colors.blue : Colors.grey,
+                            color: _pageIndex == 0 ? Colors.blue : Colors.grey,
                           ),
                         ),
                         onPressed: () {
@@ -102,14 +112,14 @@ class _HomePageState extends State<HomePage> {
                         bottom: 0,
                         child: Container(
                           height: 2,
-                          color: _currentPageIndex == 1 ? Colors.blue : Colors.transparent,
+                          color: _pageIndex == 1 ? Colors.blue : Colors.transparent,
                         ),
                       ),
                       TextButton(
                         child: Text(
                           'Devices',
                           style: TextStyle(
-                            color: _currentPageIndex == 1 ? Colors.blue : Colors.grey,
+                            color: _pageIndex == 1 ? Colors.blue : Colors.grey,
                           ),
                         ),
                         onPressed: () {
@@ -136,14 +146,14 @@ class _HomePageState extends State<HomePage> {
                         bottom: 0,
                         child: Container(
                           height: 2,
-                          color: _currentPageIndex == 2 ? Colors.blue : Colors.transparent,
+                          color: _pageIndex == 2 ? Colors.blue : Colors.transparent,
                         ),
                       ),
                       TextButton(
                         child: Text(
                           'Automations',
                           style: TextStyle(
-                            color: _currentPageIndex == 2 ? Colors.blue : Colors.grey,
+                            color: _pageIndex == 2 ? Colors.blue : Colors.grey,
                           ),
                         ),
                         onPressed: () {
@@ -170,14 +180,14 @@ class _HomePageState extends State<HomePage> {
                         bottom: 0,
                         child: Container(
                           height: 2,
-                          color: _currentPageIndex == 3 ? Colors.blue : Colors.transparent,
+                          color: _pageIndex == 3 ? Colors.blue : Colors.transparent,
                         ),
                       ),
                       TextButton(
                         child: Text(
                           'Activity',
                           style: TextStyle(
-                            color: _currentPageIndex == 3 ? Colors.blue : Colors.grey,
+                            color: _pageIndex == 3 ? Colors.blue : Colors.grey,
                           ),
                         ),
                         onPressed: () {
@@ -204,14 +214,14 @@ class _HomePageState extends State<HomePage> {
                         bottom: 0,
                         child: Container(
                           height: 2,
-                          color: _currentPageIndex == 4 ? Colors.blue : Colors.transparent,
+                          color: _pageIndex == 4 ? Colors.blue : Colors.transparent,
                         ),
                       ),
                       TextButton(
                         child: Text(
                           'Settings',
                           style: TextStyle(
-                            color: _currentPageIndex == 4 ? Colors.blue : Colors.grey,
+                            color: _pageIndex == 4 ? Colors.blue : Colors.grey,
                           ),
                         ),
                         onPressed: () {
@@ -238,14 +248,14 @@ class _HomePageState extends State<HomePage> {
                         bottom: 0,
                         child: Container(
                           height: 2,
-                          color: _currentPageIndex == 7 ? Colors.blue : Colors.transparent,
+                          color: _pageIndex == 7 ? Colors.blue : Colors.transparent,
                         ),
                       ),
                       TextButton(
                         child: Text(
                           'Test',
                           style: TextStyle(
-                            color: _currentPageIndex == 7 ? Colors.blue : Colors.grey,
+                            color: _pageIndex == 7 ? Colors.blue : Colors.grey,
                           ),
                         ),
                         onPressed: () {
@@ -271,10 +281,10 @@ class _HomePageState extends State<HomePage> {
                   ListTile(
                     leading: Icon(Icons.home_outlined),
                     title: Text('Home'),
-                    selected: _currentPageIndex == 0,
+                    selected: _pageIndex == 0,
                     onTap: () {
                       setState(() {
-                          _currentPageIndex = 0;
+                          _pageIndex = 0;
                         });
                       Navigator.of(context).pop();
                     },
@@ -282,10 +292,10 @@ class _HomePageState extends State<HomePage> {
                   ListTile(
                     leading: Icon(Icons.devices_other_outlined),
                     title: Text('Devices'),
-                    selected: _currentPageIndex == 1,
+                    selected: _pageIndex == 1,
                     onTap: () {
                       setState(() {
-                          _currentPageIndex = 1;
+                          _pageIndex = 1;
                         });
                       Navigator.of(context).pop();
                     },
@@ -293,10 +303,10 @@ class _HomePageState extends State<HomePage> {
                   ListTile(
                     leading: Icon(Icons.auto_awesome_outlined),
                     title: Text('Automations'),
-                    selected: _currentPageIndex == 2,
+                    selected: _pageIndex == 2,
                     onTap: () {
                       setState(() {
-                          _currentPageIndex = 2;
+                          _pageIndex = 2;
                         });
                       Navigator.of(context).pop();
                     },
@@ -304,10 +314,10 @@ class _HomePageState extends State<HomePage> {
                   ListTile(
                     leading: Icon(Icons.notifications_outlined),
                     title: Text('Activity'),
-                    selected: _currentPageIndex == 3,
+                    selected: _pageIndex == 3,
                     onTap: () {
                       setState(() {
-                          _currentPageIndex = 3;
+                          _pageIndex = 3;
                         });
                       Navigator.of(context).pop();
                     },
@@ -329,10 +339,10 @@ class _HomePageState extends State<HomePage> {
                         ListTile(
                           leading: Icon(Icons.settings_outlined),
                           title: Text('Settings'),
-                          selected: _currentPageIndex == 4,
+                          selected: _pageIndex == 4,
                           onTap: () {
                             setState(() {
-                                _currentPageIndex = 4;
+                                _pageIndex = 4;
                               });
                             Navigator.of(context).pop();
                           },
@@ -340,10 +350,10 @@ class _HomePageState extends State<HomePage> {
                         ListTile(
                           leading: Icon(Icons.feedback_outlined),
                           title: Text('Feedback'),
-                          selected: _currentPageIndex == 5,
+                          selected: _pageIndex == 5,
                           onTap: () {
                             setState(() {
-                                _currentPageIndex = 5;
+                                _pageIndex = 5;
                               });
                             Navigator.of(context).pop();
                           },
@@ -351,10 +361,10 @@ class _HomePageState extends State<HomePage> {
                         ListTile(
                           leading: Icon(Icons.help_outline),
                           title: Text('Help'),
-                          selected: _currentPageIndex == 6,
+                          selected: _pageIndex == 6,
                           onTap: () {
                             setState(() {
-                                _currentPageIndex = 6;
+                                _pageIndex = 6;
                               });
                             Navigator.of(context).pop();
                           },
@@ -367,7 +377,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: _pages[_currentPageIndex],
+      body: _pages[_pageIndex],
     );
   }
 }
