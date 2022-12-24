@@ -44,10 +44,14 @@ class _DraggableReorderableGridViewState extends State<DraggableReorderableGridV
             return LongPressDraggable<Widget>(
               data: item,
               child: item,
-              feedback: Container(
-                width: 200,
-                height: 200,
-                child: item,
+              feedback: ShakeWidget(
+                child: Container(
+                  width: 200,
+                  height: 200,
+                  child: item,
+                ),
+                shakeConstant: ShakeLittleConstant1(),
+                autoPlay: true,
               ),
               childWhenDragging: Container(
                 margin: EdgeInsets.all(15),
