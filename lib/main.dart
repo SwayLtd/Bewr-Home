@@ -3,11 +3,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'core/routes.dart';
-import 'core/app_theme.dart';
-
-import 'features/home/widgets/draggablereorderablegridview.dart';
+import 'package:smart_home_app/core/app_theme.dart';
+import 'package:smart_home_app/core/routes.dart';
+import 'package:smart_home_app/features/home/widgets/draggablereorderablegridview.dart';
 
 
 void main() {
@@ -44,28 +42,27 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         // https://stackoverflow.com/questions/52489458/how-to-change-status-bar-color-in-flutter
-        systemOverlayStyle: SystemUiOverlayStyle(
+        systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.white, // Status bar color
 
           // Status bar brightness (optional)
           statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
           statusBarBrightness: Brightness.light, // For iOS (dark icons)
         ),
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
-        title: Text('Pryve', style: TextStyle(color: Colors.black)),
+        title: const Text('Pryve', style: TextStyle(color: Colors.black)),
         elevation: 0.5, // configure the separator line under the AppBar
-        leading: null, // add a widget on the top right of the AppBar
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.person_outline),
+              icon: const Icon(Icons.person_outline),
               onPressed: () {
                 // Accédez aux paramètres utilisateur ici
               },
             ),
           ],
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(48),
+          preferredSize: const Size.fromHeight(48),
           child: Container(
             height: 48,
             child: ListView(
@@ -73,9 +70,8 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 Theme(
                   data: Theme.of(context).copyWith(
-                    buttonTheme: ButtonThemeData(
+                    buttonTheme: const ButtonThemeData(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
                         side: BorderSide(color: Colors.transparent, width: 0),
                       ),
                     ),
@@ -107,9 +103,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Theme(
                   data: Theme.of(context).copyWith(
-                    buttonTheme: ButtonThemeData(
+                    buttonTheme: const ButtonThemeData(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
                         side: BorderSide(color: Colors.transparent, width: 0),
                       ),
                     ),
@@ -141,9 +136,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Theme(
                   data: Theme.of(context).copyWith(
-                    buttonTheme: ButtonThemeData(
+                    buttonTheme: const ButtonThemeData(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
                         side: BorderSide(color: Colors.transparent, width: 0),
                       ),
                     ),
@@ -175,9 +169,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Theme(
                   data: Theme.of(context).copyWith(
-                    buttonTheme: ButtonThemeData(
+                    buttonTheme: const ButtonThemeData(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
                         side: BorderSide(color: Colors.transparent, width: 0),
                       ),
                     ),
@@ -209,9 +202,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Theme(
                   data: Theme.of(context).copyWith(
-                    buttonTheme: ButtonThemeData(
+                    buttonTheme: const ButtonThemeData(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
                         side: BorderSide(color: Colors.transparent, width: 0),
                       ),
                     ),
@@ -243,9 +235,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Theme(
                   data: Theme.of(context).copyWith(
-                    buttonTheme: ButtonThemeData(
+                    buttonTheme: const ButtonThemeData(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
                         side: BorderSide(color: Colors.transparent, width: 0),
                       ),
                     ),
@@ -289,8 +280,8 @@ class _HomePageState extends State<HomePage> {
               child: ListView(
                 children: <Widget>[
                   ListTile(
-                    leading: Icon(Icons.home_outlined),
-                    title: Text('Home'),
+                    leading: const Icon(Icons.home_outlined),
+                    title: const Text('Home'),
                     selected: _pageIndex == 0,
                     onTap: () {
                       setState(() {
@@ -300,8 +291,8 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.devices_other_outlined),
-                    title: Text('Devices'),
+                    leading: const Icon(Icons.devices_other_outlined),
+                    title: const Text('Devices'),
                     selected: _pageIndex == 1,
                     onTap: () {
                       setState(() {
@@ -311,8 +302,8 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.auto_awesome_outlined),
-                    title: Text('Automations'),
+                    leading: const Icon(Icons.auto_awesome_outlined),
+                    title: const Text('Automations'),
                     selected: _pageIndex == 2,
                     onTap: () {
                       setState(() {
@@ -322,8 +313,8 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.notifications_outlined),
-                    title: Text('Activity'),
+                    leading: const Icon(Icons.notifications_outlined),
+                    title: const Text('Activity'),
                     selected: _pageIndex == 3,
                     onTap: () {
                       setState(() {
@@ -336,54 +327,49 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             // This container holds the align
-            Container(
-                // This align moves the children to the bottom
-                child: Align(
-                    alignment: FractionalOffset.bottomCenter,
-                    // This container holds all the children that will be aligned
-                    // on the bottom and should not scroll with the above ListView
-                    child: Container(
-                        child: Column(
-                      children: <Widget>[
-                        Divider(color: Colors.grey),
-                        ListTile(
-                          leading: Icon(Icons.settings_outlined),
-                          title: Text('Settings'),
-                          selected: _pageIndex == 4,
-                          onTap: () {
-                            setState(() {
-                                _pageIndex = 4;
-                              });
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                        ListTile(
-                          leading: Icon(Icons.feedback_outlined),
-                          title: Text('Feedback'),
-                          selected: _pageIndex == 5,
-                          onTap: () {
-                            setState(() {
-                                _pageIndex = 5;
-                              });
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                        ListTile(
-                          leading: Icon(Icons.help_outline),
-                          title: Text('Help'),
-                          selected: _pageIndex == 6,
-                          onTap: () {
-                            setState(() {
-                                _pageIndex = 6;
-                              });
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                      ],
-                    )
-                  )
+            Align(
+                alignment: FractionalOffset.bottomCenter,
+                // This container holds all the children that will be aligned
+                // on the bottom and should not scroll with the above ListView
+                child: Column(
+                  children: <Widget>[
+                const Divider(color: Colors.grey),
+                ListTile(
+                  leading: const Icon(Icons.settings_outlined),
+                  title: const Text('Settings'),
+                  selected: _pageIndex == 4,
+                  onTap: () {
+                    setState(() {
+                        _pageIndex = 4;
+                      });
+                    Navigator.of(context).pop();
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.feedback_outlined),
+                  title: const Text('Feedback'),
+                  selected: _pageIndex == 5,
+                  onTap: () {
+                    setState(() {
+                        _pageIndex = 5;
+                      });
+                    Navigator.of(context).pop();
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.help_outline),
+                  title: const Text('Help'),
+                  selected: _pageIndex == 6,
+                  onTap: () {
+                    setState(() {
+                        _pageIndex = 6;
+                      });
+                    Navigator.of(context).pop();
+                  },
+                ),
+                  ],
                 )
-              )
+            )
           ],
         ),
       ),
@@ -397,11 +383,11 @@ Widget buildMenuItem({
   required IconData icon,
   VoidCallback? onClicked,
 }) {
-  final color = Colors.grey;
+  const color = Colors.grey;
 
   return ListTile(
     leading: Icon(icon, color: color),
-    title: Text(text, style: TextStyle(color: color)),
+    title: Text(text, style: const TextStyle(color: color)),
     onTap: onClicked,
   );
 }
@@ -410,77 +396,77 @@ Widget buildScrollMenuItem({
   required String text,
   VoidCallback? onClicked,
 }) {
-  final color = Colors.grey;
+  const color = Colors.grey;
 
   return TextButton(
     style: TextButton.styleFrom(foregroundColor: color),
-    child: Text(text),
     onPressed: onClicked,
+    child: Text(text),
   );
 }
 
 final List<Widget> listOfWidgets = [
-    Card(
+    const Card(
       margin: EdgeInsets.all(10),
       color: Colors.red,
       child: Center(
         child: Text('Item 1'),
       ),
     ),
-    Card(
+    const Card(
       margin: EdgeInsets.all(10),
       color: Colors.green,
       child: Center(
         child: Text('Item 2'),
       ),
     ),
-    Card(
+    const Card(
       margin: EdgeInsets.all(10),
       color: Colors.blue,
       child: Center(
         child: Text('Item 3'),
       ),
     ),
-    Card(
+    const Card(
       margin: EdgeInsets.all(10),
       color: Colors.yellow,
       child: Center(
         child: Text('Item 4'),
       ),
     ),
-    Card(
+    const Card(
       margin: EdgeInsets.all(10),
       color: Colors.purple,
       child: Center(
         child: Text('Item 5'),
       ),
     ),
-    Card(
+    const Card(
       margin: EdgeInsets.all(10),
       color: Colors.orange,
       child: Center(
         child: Text('Item 6'),
       ),
     ),
-    Card(
+    const Card(
       margin: EdgeInsets.all(10),
       child: Center(
         child: Text('Item 7'),
       ),
     ),
-    Card(
+    const Card(
       margin: EdgeInsets.all(10),
       child: Center(
         child: Text('Item 8'),
       ),
     ),
-    Card(
+    const Card(
       margin: EdgeInsets.all(10),
       child: Center(
         child: Text('Item 9'),
       ),
     ),
-    Card(
+    const Card(
       margin: EdgeInsets.all(10),
       child: Center(
         child: Text('Item 10'),
@@ -513,7 +499,7 @@ final camera = SmartDevice('Caméra de surveillance', 'En ligne', Icons.videocam
 final outlet = SmartDevice('Prise de salon', 'Allumée', Icons.power_input);
 
 class _DevicesState extends State<Devices> {
-  List<SmartDevice> _devices = [livingLight, thermostat, camera, outlet];
+  final List<SmartDevice> _devices = [livingLight, thermostat, camera, outlet];
 
   @override
   void initState() {
@@ -523,35 +509,32 @@ class _DevicesState extends State<Devices> {
   }
 
   void _showLampControlBottomSheet() {
-    int _lampIntensity = 50;
+    int lampIntensity = 50;
 
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
         return ConstrainedBox(
-          constraints: BoxConstraints(
+          constraints: const BoxConstraints(
             maxHeight: 500,
           ),
-          child: Container(
-            child: Column(
-              children: [
-                Text('Intensité de la lampe'),
-                Slider(
-                  value: _lampIntensity.toDouble(),
-                  min: 0,
-                  max: 100,
-                  onChanged: (double newIntensity) {
-                    setState(() {
-                      _lampIntensity = newIntensity.round();
-                    });
-                  },
-                ),
-              ],
-            ),
+          child: Column(
+            children: [
+              const Text('Intensité de la lampe'),
+              Slider(
+                value: lampIntensity.toDouble(),
+                max: 100,
+                onChanged: (double newIntensity) {
+                  setState(() {
+                    lampIntensity = newIntensity.round();
+                  });
+                },
+              ),
+            ],
           ),
         );
       },
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(16),
           topRight: Radius.circular(16),
@@ -577,14 +560,14 @@ class _DevicesState extends State<Devices> {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   IconButton(
-                    icon: Icon(Icons.power_settings_new),
+                    icon: const Icon(Icons.power_settings_new),
                     onPressed: () {
                       // Gérer le contrôle de l'objet connecté ici
                       // ...
                     },
                   ),
                   IconButton(
-                    icon: Icon(Icons.settings),
+                    icon: const Icon(Icons.settings),
                     onPressed: () {
                       // Gérer les paramètres de l'objet connecté ici
                       // ...
@@ -618,7 +601,7 @@ class Automations extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           Container(
-            margin: EdgeInsets.only(top: 16, bottom: 8, left: 8),
+            margin: const EdgeInsets.only(top: 16, bottom: 8, left: 8),
             child: Text(
               'Quotidien',
               style: Theme.of(context).textTheme.subtitle1,
@@ -641,7 +624,7 @@ class Automations extends StatelessWidget {
             },
           ),
           Container(
-            margin: EdgeInsets.only(top: 16, bottom: 8, left: 8),
+            margin: const EdgeInsets.only(top: 16, bottom: 8, left: 8),
             child: Text(
               'Soirée',
               style: Theme.of(context).textTheme.subtitle1,
@@ -670,7 +653,7 @@ class Automations extends StatelessWidget {
         onPressed: () {
           // Ouvrez la page de création de routine ici
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -704,7 +687,7 @@ class RoutineTile extends StatelessWidget {
             shape: BoxShape.circle,
             color: Theme.of(context).primaryColor,
           ),
-          child: Icon(
+          child: const Icon(
             Icons.play_arrow,
             color: Colors.white,
             size: 20,
@@ -721,12 +704,12 @@ class Activity extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           ListTile(
-            leading: Icon(Icons.check_circle),
+            leading: const Icon(Icons.check_circle),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text(
                   'Tâche 1',
                   style: TextStyle(
@@ -754,18 +737,18 @@ class Activity extends StatelessWidget {
               ],
             ),
             trailing: IconButton(
-              icon: Icon(Icons.more_vert),
+              icon: const Icon(Icons.more_vert),
               onPressed: () {
                 
               },
             ),
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           ListTile(
-            leading: Icon(Icons.info),
+            leading: const Icon(Icons.info),
             title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text(
                     'Tâche 2',
                     style: TextStyle(
@@ -792,18 +775,18 @@ class Activity extends StatelessWidget {
                 ],
               ),
               trailing: IconButton(
-              icon: Icon(Icons.more_vert),
+              icon: const Icon(Icons.more_vert),
               onPressed: () {
                 
               },
             ),
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           ListTile(
-            leading: Icon(Icons.check_circle),
+            leading: const Icon(Icons.check_circle),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text(
                   'Tâche 3',
                   style: TextStyle(
@@ -830,7 +813,7 @@ class Activity extends StatelessWidget {
               ],
             ),
             trailing: IconButton(
-              icon: Icon(Icons.more_vert),
+              icon: const Icon(Icons.more_vert),
               onPressed: () {
                 
               },
@@ -859,7 +842,7 @@ class _SettingsState extends State<Settings> {
       body: ListView(
         children: <Widget>[
           SwitchListTile(
-            title: Text('Notifications'),
+            title: const Text('Notifications'),
             value: _notificationsEnabled,
             onChanged: (value) {
               setState(() {
@@ -868,7 +851,7 @@ class _SettingsState extends State<Settings> {
             },
           ),
           ListTile(
-            title: Text('Langue'),
+            title: const Text('Langue'),
             trailing: DropdownButton<String>(
               value: _language,
               onChanged: (value) {
@@ -885,7 +868,7 @@ class _SettingsState extends State<Settings> {
             ),
           ),
           ListTile(
-            title: Text('Unité de température'),
+            title: const Text('Unité de température'),
             trailing: DropdownButton<int>(
               value: _temperatureUnit,
               onChanged: (value) {
@@ -893,7 +876,7 @@ class _SettingsState extends State<Settings> {
                   _temperatureUnit = value!;
                 });
               },
-              items: [
+              items: const [
                 DropdownMenuItem(
                   value: 0,
                   child: Text('°C'),
@@ -912,7 +895,7 @@ class _SettingsState extends State<Settings> {
         onPressed: () {
           // Enregistrez les modifications apportées aux paramètres ici
         },
-        child: Icon(Icons.save),
+        child: const Icon(Icons.save),
       ),
     );
   }
@@ -928,40 +911,40 @@ class _FeedbackState extends State<Feedback> {
   String _feedbackTitle = '';
   String _email = '';
   String _description = '';
-  List<Attachment> _attachments = [];
+  final List<Attachment> _attachments = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Form(
             key: _formKey,
             child: Column(
               children: <Widget>[
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Titre du feedback',
                   ),
                   validator: (value) {
-                    //if (value.isEmpty) {
-                      //return 'Veuillez entrer un titre';
-                    //}
+                    if (value!.isEmpty) {
+                      return 'Veuillez entrer un titre';
+                    }
                     return null;
                   },
                   onSaved: (value) {
-                    //_feedbackTitle = value;
+                    _feedbackTitle = value!;
                   },
                 ),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Adresse email (facultatif)',
                   ),
                   validator: (value) {
-                    //if (value.isNotEmpty && !value.contains('@')) {
-                      //return 'Veuillez entrer une adresse email valide';
-                    //}
+                    if (value!.isNotEmpty && !value.contains('@')) {
+                      return 'Veuillez entrer une adresse email valide';
+                    }
                     return null;
                   },
                   onSaved: (value) {
@@ -969,34 +952,32 @@ class _FeedbackState extends State<Feedback> {
                   },
                 ),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Description du problème',
                   ),
                   validator: (value) {
-                    //if (value.isEmpty) {
-                      //return 'Veuillez entrer une description';
-                    //}
+                    if (value!.isEmpty) {
+                      return 'Veuillez entrer une description';
+                    }
                     return null;
                   },
                   onSaved: (value) {
-                    //_description = value;
+                    _description = value!;
                   },
                   maxLines: 5,
                 ),
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text('Pièces jointes'),
-                      TextButton(
-                        child: Text('Ajouter une pièce jointe'),
-                        onPressed: () {
-                          // Ouvrir un sélecteur de fichier et ajouter le fichier sélectionné à la liste des pièces jointes ici
-                          // ...
-                        },
-                      ),
-                    ],
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    const Text('Pièces jointes'),
+                    TextButton(
+                      child: const Text('Ajouter une pièce jointe'),
+                      onPressed: () {
+                        // Ouvrir un sélecteur de fichier et ajouter le fichier sélectionné à la liste des pièces jointes ici
+                        // ...
+                      },
+                    ),
+                  ],
                 ),
                 ListView.builder(
                   shrinkWrap: true,
@@ -1004,10 +985,10 @@ class _FeedbackState extends State<Feedback> {
                   itemBuilder: (context, index) {
                     final attachment = _attachments[index];
                     return ListTile(
-                      leading: Icon(Icons.attach_file),
+                      leading: const Icon(Icons.attach_file),
                       title: Text(attachment.name),
                       trailing: IconButton(
-                        icon: Icon(Icons.delete),
+                        icon: const Icon(Icons.delete),
                         onPressed: () {
                           // Supprimer la pièce jointe de la liste ici
                           // ...
@@ -1017,9 +998,9 @@ class _FeedbackState extends State<Feedback> {
                   },
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 16),
+                  margin: const EdgeInsets.only(top: 16),
                   child: TextButton(
-                    child: Text('Envoyer'),
+                    child: const Text('Envoyer'),
                     onPressed: () {
                           //if (_formKey.currentState.validate()) {
                           // Envoyer le feedback ici
@@ -1054,15 +1035,15 @@ class Help extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Paramètres de l\'appareil'),
+            leading: const Icon(Icons.settings),
+            title: const Text("Paramètres de l'appareil"),
             onTap: () {
               //Navigator.push(context, CupertinoPageRoute(builder: (context) => Settings()));
             },
           ),
           ListTile(
-            leading: Icon(Icons.help),
-            title: Text('Aide et assistance'),
+            leading: const Icon(Icons.help),
+            title: const Text('Aide et assistance'),
             onTap: () {
               //Navigator.push(context, CupertinoPageRoute(builder: (context) => Feedback()));
             },
@@ -1097,11 +1078,11 @@ List<ConnectedObject> connectedObjects = [
 
 List<String> getSuggestions() {
   // List of suggestions
-  List<String> suggestions = [];
+  final List<String> suggestions = [];
 
   // Browse each connected object and add a suggestion if it meets certain conditions between them
-  for (ConnectedObject obj1 in connectedObjects) {
-    for (ConnectedObject obj2 in connectedObjects) {
+  for (final ConnectedObject obj1 in connectedObjects) {
+    for (final ConnectedObject obj2 in connectedObjects) {
       if (obj1.type == 'detecteur_fumee' && obj1.state == true && obj2.type == 'four' && obj2.state == true) {
         suggestions.add('Ajouter une automatisation pour éteindre le four en cas de détection de fumée par le détecteur de fumée');
       }
@@ -1115,9 +1096,9 @@ List<String> getSuggestions() {
   }
 
   // Browse each connected object and add a suggestion if it meets certain conditions
-  for (ConnectedObject obj in connectedObjects) {
+  for (final ConnectedObject obj in connectedObjects) {
     if (obj.type == 'detecteur_fuite_eau' && obj.state == false) {
-      suggestions.add('Acheter un détecteur de fuite d\'eau pour être informé immédiatement en cas de fuite d\'eau dans votre cuisine');
+      suggestions.add("Acheter un détecteur de fuite d'eau pour être informé immédiatement en cas de fuite d'eau dans votre cuisine");
     }
   }
 
@@ -1151,17 +1132,17 @@ class _SuggestionsWidgetState extends State<SuggestionsWidget> {
   @override
     Widget build(BuildContext context) {
       return Container(
-        margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         child: ListView.builder(
           itemCount: suggestions.length,
           itemBuilder: (BuildContext context, int index) {
             return Card(
               elevation: 4.0,
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Text(
                   suggestions[index],
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18.0,
                     color: Colors.black,
                   ),

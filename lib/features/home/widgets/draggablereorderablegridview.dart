@@ -2,14 +2,14 @@
 // - make the widget staggered with different sizes
 // Final name: Draggable Reorderable Staggered Quilted GridView
 
-import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_shake_animated/flutter_shake_animated.dart';
 
 class DraggableReorderableGridView extends StatefulWidget {
   final List<Widget> items;
 
-  DraggableReorderableGridView({
+  const DraggableReorderableGridView({
     required this.items,
   });
   
@@ -43,27 +43,27 @@ class _DraggableReorderableGridViewState extends State<DraggableReorderableGridV
           builder: (context, accepted, rejected) {
             return LongPressDraggable<Widget>(
               data: item,
-              child: item,
               feedback: ShakeWidget(
-                child: Container(
+                shakeConstant: ShakeLittleConstant1(),
+                autoPlay: true,
+                child: SizedBox(
                   width: 200,
                   height: 200,
                   child: item,
                 ),
-                shakeConstant: ShakeLittleConstant1(),
-                autoPlay: true,
               ),
               childWhenDragging: Container(
-                margin: EdgeInsets.all(15),
+                margin: const EdgeInsets.all(15),
                 child: DottedBorder(
                   color: Colors.grey,
                   dashPattern: [12, 8],
                   strokeWidth: 2,
                   borderType: BorderType.RRect,
-                  radius: Radius.circular(5),
+                  radius: const Radius.circular(5),
                   child: Container(),
                 ),
               ),
+              child: item,
             );
           },
         );
