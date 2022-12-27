@@ -3,10 +3,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'core/routes.dart';
+import 'core/app_theme.dart';
+
 import 'features/home/widgets/draggablereorderablegridview.dart';
+
+
 void main() {
   runApp(
     MaterialApp(
+      routes: Routes.routes,
+      initialRoute: Routes.home,
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
       home: HomePage(),
       title: 'Pryve Home',
       debugShowCheckedModeBanner: false,
@@ -865,7 +875,7 @@ class _SettingsState extends State<Settings> {
                 setState(() {
                   _language = value!;
                 });
-              },
+              },           
               items: ['Français', 'English', 'Español']
                   .map((language) => DropdownMenuItem(
                         value: language,
