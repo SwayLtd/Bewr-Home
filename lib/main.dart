@@ -3,7 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'draggablereorderablegridview.dart';
+import 'features/home/widgets/draggablereorderablegridview.dart';
 void main() {
   runApp(
     MaterialApp(
