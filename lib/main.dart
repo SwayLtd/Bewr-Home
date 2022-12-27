@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
           ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(48),
-          child: Container(
+          child: SizedBox(
             height: 48,
             child: ListView(
               scrollDirection: Axis.horizontal,
@@ -323,7 +323,7 @@ class _HomePageState extends State<HomePage> {
                       Navigator.of(context).pop();
                     },
                   ),
-                ]
+                ],
               ),
             ),
             // This container holds the align
@@ -368,7 +368,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                   ],
-                )
+                ),
             )
           ],
         ),
@@ -863,7 +863,7 @@ class _SettingsState extends State<Settings> {
                   .map((language) => DropdownMenuItem(
                         value: language,
                         child: Text(language),
-                      ))
+                      ),)
                   .toList(),
             ),
           ),

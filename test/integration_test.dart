@@ -3,13 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('API integration tests', () async {
-    FlutterDriver driver = await FlutterDriver.connect();
-
-    tearDownAll(() async {
-      if (driver != null) {
-        driver.close();
-      }
-    });
+    final FlutterDriver driver = await FlutterDriver.connect();
 
     test('fetch data from API', () async {
       // Tap the "Fetch data" button

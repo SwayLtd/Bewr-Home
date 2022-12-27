@@ -5,7 +5,7 @@ void main() {
   testWidgets('Text widget displays correct text', (tester) async {
     // Build the widget
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: Scaffold(
           body: Text('Hello World'),
         ),
