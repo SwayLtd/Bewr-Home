@@ -14,15 +14,17 @@ class DraggableReorderableGridView extends StatefulWidget {
   });
   
   @override
-  _DraggableReorderableGridViewState createState() => _DraggableReorderableGridViewState(items: items);
+  _DraggableReorderableGridViewState createState() => _DraggableReorderableGridViewState();
 }
 
 class _DraggableReorderableGridViewState extends State<DraggableReorderableGridView> {
-  final List<Widget> items;
+  late List<Widget> items;
 
-  _DraggableReorderableGridViewState({
-    required this.items,
-  });
+  @override
+  void initState() {
+    super.initState();
+    items = widget.items;
+  }
 
   @override
   Widget build(BuildContext context) {
