@@ -26,22 +26,32 @@ This style guide outlines the coding conventions used in this project. By adheri
 
 Here are some examples of code that follows these conventions:
 
+```
 // This is a single-line comment
+```
 
+```
 /* This is a
 multi-line comment */
+```
 
+```
 class User {
-	// This is a class representing a user
-	String name;
-	int age;
-}
+  // This is a class representing a user
+  String name;
+  int age;
+}  
+```
 
+```
 const int kMaxItems = 10;
+```
 
+```
 void main() {
-	// This is the main function
-	var user = User();
-	user.name = 'John';
-	user.age = 30;
+  // This is the main function
+  var user = User();
+  user.name = 'John';
+  user.age = 30;
 }
+```
