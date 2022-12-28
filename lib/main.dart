@@ -16,7 +16,7 @@ void main() {
       initialRoute: Routes.home,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      title: 'Pryve Home',
+      title: 'Bewr Home',
       debugShowCheckedModeBanner: false,
     ),
   );

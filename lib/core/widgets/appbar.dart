@@ -15,7 +15,7 @@ Widget appBar() {
       ),
       iconTheme: const IconThemeData(color: Colors.black),
       backgroundColor: Colors.white,
-      title: const Text('Pryve', style: TextStyle(color: Colors.black)),
+      title: const Text('Bewr', style: TextStyle(color: Colors.black)),
       elevation: 0.5, // configure the separator line under the AppBar
         actions: <Widget>[
           IconButton(

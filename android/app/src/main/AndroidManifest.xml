@@ -2,7 +2,7 @@
     package="com.example.smart_home_app">
     <!-- https://medium.com/@vaibhavi.rana99/change-application-name-and-icon-in-flutter-bebbec297c57 -->
     <application
-        android:label="Pryve Home"
+        android:label="Bewr Home"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
