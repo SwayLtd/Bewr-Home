@@ -58,7 +58,7 @@ class _DraggableReorderableGridViewState extends State<DraggableReorderableGridV
                 margin: const EdgeInsets.all(15),
                 child: DottedBorder(
                   color: Colors.grey,
-                  dashPattern: const [12, 8],
+                  dashPattern: const [8, 4],
                   strokeWidth: 2,
                   borderType: BorderType.RRect,
                   radius: const Radius.circular(5),
