@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(),
+      //appBar: appBar(),
       // https://stackoverflow.com/questions/50471025/flutter-align-button-to-bottom-of-drawer
       drawer: createDrawer(context),
       body: const Center(
