@@ -57,7 +57,6 @@ class _DevicesState extends State<Devices> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: createDrawer(context),
       body: ListView.builder(
         itemCount: _devices.length,
         itemBuilder: (context, index) {
