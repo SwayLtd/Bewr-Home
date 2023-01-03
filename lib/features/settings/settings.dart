@@ -1,3 +1,5 @@
+// Use shared_preferences package to store some settings
+
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
