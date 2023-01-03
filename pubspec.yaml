@@ -37,6 +37,8 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^7.3.0
   flutter_shake_animated: ^0.0.5
+  go_router: ^6.0.0
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_driver:
