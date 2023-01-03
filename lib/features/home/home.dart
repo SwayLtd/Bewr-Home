@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home_app/features/home/widgets/draggablereorderablegridview.dart';
-import 'package:smart_home_app/main.dart';
 
 class Home extends StatefulWidget {
   static const String routeName = '/';
@@ -12,7 +11,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return MyApp(
+    return Scaffold(
       body: DraggableReorderableGridView(items: listOfWidgets,),
     );
   }
