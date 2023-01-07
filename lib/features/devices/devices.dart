@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home_app/core/widgets/drawer.dart';
 
-class Devices extends StatefulWidget {
-  static const String routeName = '/devices';
+class DevicesPage extends StatefulWidget {
+  const DevicesPage({super.key});
 
   @override
-  _DevicesState createState() => _DevicesState();
+  _DevicesPageState createState() => _DevicesPageState();
 }
 
-class _DevicesState extends State<Devices> {
+class _DevicesPageState extends State<DevicesPage> {
   final List<SmartDevice> _devices = [livingLight, thermostat, camera, outlet];
 
   @override

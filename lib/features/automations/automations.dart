@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Automations extends StatelessWidget {
-  static const String routeName = '/automations';
+class AutomationsPage extends StatelessWidget {
+  const AutomationsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class Automations extends StatelessWidget {
             margin: const EdgeInsets.only(top: 16, bottom: 8, left: 8),
             child: Text(
               'Quotidien',
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           RoutineTile(
@@ -35,7 +35,7 @@ class Automations extends StatelessWidget {
             margin: const EdgeInsets.only(top: 16, bottom: 8, left: 8),
             child: Text(
               'Soirée',
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           RoutineTile(

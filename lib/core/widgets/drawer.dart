@@ -1,7 +1,7 @@
 // https://betterprogramming.pub/how-to-implement-a-navigation-drawer-in-flutter-8d97d3b599d4
 
 import 'package:flutter/material.dart';
-import 'package:smart_home_app/core/routes.dart';
+import 'package:bewr_home/core/routes.dart';
 
 // https://stackoverflow.com/questions/50471025/flutter-align-button-to-bottom-of-drawer
 /* Widget createDrawer(BuildContext context) {

@@ -1,14 +1,14 @@
+import 'package:bewr_home/features/home/widgets/draggablereorderablegridview.dart';
 import 'package:flutter/material.dart';
-import 'package:smart_home_app/features/home/widgets/draggablereorderablegridview.dart';
 
-class Home extends StatefulWidget {
-  static const String routeName = '/';
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  _HomeState createState() => _HomeState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomeState extends State<Home> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,12 +1,12 @@
 //SQLite pour stocker des données en local
 //Firebase pour stocker des données à grande échelle ou de synchroniser des données entre plusieurs appareils
 
+import 'package:bewr_home/core/app_theme.dart';
+import 'package:bewr_home/core/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:smart_home_app/core/app_theme.dart';
-import 'package:smart_home_app/core/routes.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

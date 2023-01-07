@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class Settings extends StatefulWidget {
-  static const String routeName = '/settings';
+class SettingsPage extends StatefulWidget {
+  const SettingsPage({super.key});
   
   @override
-  _SettingsState createState() => _SettingsState();
+  _SettingsPageState createState() => _SettingsPageState();
 }
 
-class _SettingsState extends State<Settings> {
+class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

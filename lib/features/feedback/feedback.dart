@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Feedback extends StatefulWidget {
-  static const String routeName = '/feedback';
+class FeedbackPage extends StatefulWidget {
+  const FeedbackPage({super.key});
 
   @override
-  _FeedbackState createState() => _FeedbackState();
+  _FeedbackPageState createState() => _FeedbackPageState();
 }
 
-class _FeedbackState extends State<Feedback> {
+class _FeedbackPageState extends State<FeedbackPage> {
   final _formKey = GlobalKey<FormState>();
-  String _feedbackTitle = '';
-  String _email = '';
-  String _description = '';
   final List<Attachment> _attachments = [];
 
   @override
@@ -35,7 +32,6 @@ class _FeedbackState extends State<Feedback> {
                     return null;
                   },
                   onSaved: (value) {
-                    _feedbackTitle = value!;
                   },
                 ),
                 TextFormField(
@@ -49,7 +45,6 @@ class _FeedbackState extends State<Feedback> {
                     return null;
                   },
                   onSaved: (value) {
-                    _email = value!;
                   },
                 ),
                 TextFormField(
@@ -63,7 +58,6 @@ class _FeedbackState extends State<Feedback> {
                     return null;
                   },
                   onSaved: (value) {
-                    _description = value!;
                   },
                   maxLines: 5,
                 ),
