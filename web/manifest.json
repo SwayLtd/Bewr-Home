@@ -1,6 +1,6 @@
 {
-    "name": "smart_home_app",
-    "short_name": "smart_home_app",
+    "name": "bewr_home",
+    "short_name": "bewr_home",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#800020",

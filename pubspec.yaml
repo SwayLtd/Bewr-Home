@@ -1,4 +1,4 @@
-name: smart_home_app
+name: bewr_home
 description: A new Smart Home approach.
 
 # The following line prevents the package from being accidentally published to
@@ -70,7 +70,6 @@ flutter_icons:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

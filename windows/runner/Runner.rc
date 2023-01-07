@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "smart_home_app" "\0"
+            VALUE "FileDescription", "bewr_home" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "smart_home_app" "\0"
+            VALUE "InternalName", "bewr_home" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "smart_home_app.exe" "\0"
-            VALUE "ProductName", "smart_home_app" "\0"
+            VALUE "OriginalFilename", "bewr_home.exe" "\0"
+            VALUE "ProductName", "bewr_home" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
