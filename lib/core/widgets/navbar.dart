@@ -1,21 +1,22 @@
+import 'package:bewr_home/core/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:smart_home_app/core/routes.dart';
+import 'package:go_router/go_router.dart';
 
-class ScaffoldWithNavBar extends StatelessWidget {
-  /// Constructs an [ScaffoldWithNavBar].
-  const ScaffoldWithNavBar({
-    required this.child,
-    super.key,
-  });
-
-  /// The widget to display in the body of the Scaffold.
-  /// In this sample, it is a Navigator.
+class ScaffoldWithNavBar extends StatefulWidget {
+  const ScaffoldWithNavBar({super.key, required this.child});
   final Widget child;
 
   @override
+  State<ScaffoldWithNavBar> createState() =>
+      _ScaffoldWithNavBarState();
+}
+
+class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
+  /// The widget to display in the body of the Scaffold.
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: child,
+      body: widget.child,
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.amber[800],
         items: const <BottomNavigationBarItem>[
@@ -32,15 +33,15 @@ class ScaffoldWithNavBar extends StatelessWidget {
             label: 'Automations',
           ),
         ],
-        onTap: (int idx) => _onItemTapped(idx, context),
-        currentIndex: _selectedIndex(),
+        onTap: _onTap,
+        currentIndex: _selectedIndex(context),
       ),
     );
   }
 
-  static int _selectedIndex() {
+  static int _selectedIndex(BuildContext context) {
     final String location = router.location;
-    if (location.startsWith('/')) {
+    if (location.startsWith('/home')) {
       return 0;
     }
     if (location.startsWith('/devices')) {
@@ -52,17 +53,16 @@ class ScaffoldWithNavBar extends StatelessWidget {
     return 0;
   }
 
-  void _onItemTapped(int index, BuildContext context) {
+  void _onTap(int index) {
     switch (index) {
       case 0:
-        router.go('/');
-        break;
+        return context.push('/home');
       case 1:
-        router.go('/devices');
-        break;
+        return context.push('/devices');
       case 2:
-        router.go('/automations');
-        break;
+        return context.push('/automations');
+      default:
+        return context.push('/home');
     }
   }
 }
