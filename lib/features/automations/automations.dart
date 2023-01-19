@@ -1,3 +1,4 @@
+import 'package:bewr_home/core/localizations.dart';
 import 'package:flutter/material.dart';
 
 class AutomationsPage extends StatelessWidget {
@@ -11,7 +12,7 @@ class AutomationsPage extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(top: 16, bottom: 8, left: 8),
             child: Text(
-              'Quotidien',
+              context.loc.daily,
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),

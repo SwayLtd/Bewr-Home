@@ -1,0 +1,15 @@
+{
+	"title": "Bewr Home",
+	"daily": "Daily",
+	"helloWorld": "Hello World!",
+	"@helloWorld": {
+	  "description": "The conventional newborn programmer greeting"
+	},
+
+	"homeItem1": "Item 1",
+	"homeItem2": "Item 2",
+	"homeItem3": "Item 3",
+	"homeItem4": "Item 4",
+	"homeItem5": "Item 5",
+	"homeItem6": "Item 6"
+}

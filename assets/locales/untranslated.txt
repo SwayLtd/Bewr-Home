@@ -1,0 +1,10 @@
+{
+  "fr": [
+    "homeItem1",
+    "homeItem2",
+    "homeItem3",
+    "homeItem4",
+    "homeItem5",
+    "homeItem6"
+  ]
+}

@@ -1,3 +1,4 @@
+import 'package:bewr_home/core/localizations.dart';
 import 'package:bewr_home/features/home/widgets/draggablereorderablegridview.dart';
 import 'package:flutter/material.dart';
 
@@ -11,53 +12,55 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final List<Widget> listOfWidgets = [
+      Card(
+        margin: const EdgeInsets.all(10),
+        color: const Color.fromARGB(255, 78, 49, 47),
+        child: Center(
+          child: Text(context.loc.homeItem1),
+        ),
+      ),
+      Card(
+        margin: const EdgeInsets.all(10),
+        color: Colors.green,
+        child: Center(
+          child: Text(context.loc.homeItem2),
+        ),
+      ),
+      Card(
+        margin: const EdgeInsets.all(10),
+        color: Colors.blue,
+        child: Center(
+          child: Text(context.loc.homeItem3),
+        ),
+      ),
+      Card(
+        margin: const EdgeInsets.all(10),
+        color: Colors.yellow,
+        child: Center(
+          child: Text(context.loc.homeItem4),
+        ),
+      ),
+      Card(
+        margin: const EdgeInsets.all(10),
+        color: Colors.purple,
+        child: Center(
+          child: Text(context.loc.homeItem5),
+        ),
+      ),
+      Card(
+        margin: const EdgeInsets.all(10),
+        color: Colors.orange,
+        child: Center(
+          child: Text(context.loc.homeItem6),
+        ),
+      ),
+    ];
+
     return Scaffold(
-      body: DraggableReorderableGridView(items: listOfWidgets,),
+      body: DraggableReorderableGridView(
+        items: listOfWidgets,
+      ),
     );
   }
 }
-
-final List<Widget> listOfWidgets = [
-  const Card(
-    margin: EdgeInsets.all(10),
-    color: Colors.red,
-    child: Center(
-      child: Text('Item 1'),
-    ),
-  ),
-  const Card(
-    margin: EdgeInsets.all(10),
-    color: Colors.green,
-    child: Center(
-      child: Text('Item 2'),
-    ),
-  ),
-  const Card(
-    margin: EdgeInsets.all(10),
-    color: Colors.blue,
-    child: Center(
-      child: Text('Item 3'),
-    ),
-  ),
-  const Card(
-    margin: EdgeInsets.all(10),
-    color: Colors.yellow,
-    child: Center(
-      child: Text('Item 4'),
-    ),
-  ),
-  const Card(
-    margin: EdgeInsets.all(10),
-    color: Colors.purple,
-    child: Center(
-      child: Text('Item 5'),
-    ),
-  ),
-  const Card(
-    margin: EdgeInsets.all(10),
-    color: Colors.orange,
-    child: Center(
-      child: Text('Item 6'),
-    ),
-  ),
-];

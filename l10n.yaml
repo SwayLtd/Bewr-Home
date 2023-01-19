@@ -1,0 +1,11 @@
+# https://docs.flutter.dev/development/accessibility-and-localization/internationalization
+
+arb-dir: assets/locales
+template-arb-file: app_en.arb
+output-localization-file: app_localizations.dart
+use-deferred-loading: true
+nullable-getter: false # https://codewithandrea.com/articles/flutter-localization-build-context-extension/
+untranslated-messages-file: assets/locales/untranslated.txt
+# output-dir: The directory where the generated localization classes will be written. This option is only relevant if you want to generate the localizations code somewhere else in the Flutter project. You will also need to set the synthetic-package flag to false.
+# output-class: The Dart class name to use for the output localization and localizations delegate classes. The default is AppLocalizations.
+# synthetic-package: Determines whether or not the generated output files will be generated as a synthetic package or at a specified directory in the Flutter project. This flag is set to true by default. When synthetic-package is set to false, it will generate the localizations files in the directory specified by arb-dir by default. If output-dir is specified, files will be generated there.

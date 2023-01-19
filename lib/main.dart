@@ -4,6 +4,7 @@
 import 'package:bewr_home/core/app_theme.dart';
 import 'package:bewr_home/core/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,11 +16,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Bewr Home',
+      debugShowCheckedModeBanner: false,
+      title: "Bewr Home",
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      debugShowCheckedModeBanner: false,
       routerConfig: router,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }
