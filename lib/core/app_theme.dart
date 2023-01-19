@@ -49,8 +49,8 @@ class AppTheme {
       bodySmall: GoogleFonts.spaceGrotesk(fontSize: 12, fontWeight: FontWeight.w400, letterSpacing: 0.4),
       labelSmall: GoogleFonts.spaceGrotesk(fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5),
     ).apply(
-      bodyColor: Colors.black,
-      displayColor: Colors.black,
+      bodyColor: Colors.white,
+      displayColor: Colors.white,
     ),
   );
 }
