@@ -8,7 +8,6 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 
 ## Roadmap
 ### Planned Features
-* Support for languages other than English.
 * Bottom navigation bar or app bar + drawer depending on screen size (MediaQuery)
 * Visual flow-based programming for the automations (new name: Flow)
 * Theme integration on all screens
