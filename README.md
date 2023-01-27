@@ -8,9 +8,13 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 
 ## Roadmap
 ### Planned Features
-* Bottom navigation bar or app bar + drawer depending on screen size (MediaQuery)
-* Visual flow-based programming for the automations (new name: Flow)
+* Add full comments to the code
+* Add Desktop responsive design with opened drawer by default
+* Visual flow-based programming for the automations
 * Theme integration on all screens
+* Analytics and error reporting
+* Implementing notification
+* Building all screens
 
 See the [open issues](https://github.com/BewrApp/Bewr-Home/issues) for a list of proposed features (and known issues).
 
