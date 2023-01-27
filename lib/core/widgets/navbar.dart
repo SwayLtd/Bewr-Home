@@ -7,62 +7,74 @@ class ScaffoldWithNavBar extends StatefulWidget {
   final Widget child;
 
   @override
-  State<ScaffoldWithNavBar> createState() =>
-      _ScaffoldWithNavBarState();
+  State<ScaffoldWithNavBar> createState() => _ScaffoldWithNavBarState();
 }
 
 class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
+  int _currentIndex = 0;
+
+  List<BottomNavigationBarItem> _items = const <BottomNavigationBarItem>[
+  BottomNavigationBarItem(
+    icon: Icon(Icons.home_outlined),
+    label: 'Home',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.devices_other_outlined),
+    label: 'Devices',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(Icons.auto_awesome_outlined),
+    label: 'Automations',
+  ),
+];
+
+  @override
+  void initState() {
+    super.initState();
+    _currentIndex = selectedIndex();
+  }
+
   /// The widget to display in the body of the Scaffold.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: widget.child,
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.amber[800],
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.devices_other_outlined),
-            label: 'Devices',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.auto_awesome_outlined),
-            label: 'Automations',
-          ),
+      appBar: AppBar(
+        title: Text(
+            "${GoRouter.of(context).location.split("/").last.toString()[0].toUpperCase()}${GoRouter.of(context).location.split("/").last.toString().substring(1).toLowerCase()}"), // https://stackoverflow.com/questions/29628989/how-to-capitalize-the-first-letter-of-a-string-in-dart
+        centerTitle: true,
+        elevation: 0.5, // configure the separator line under the AppBar
+        actions: <Widget>[
+          GestureDetector(
+            onTap: () {
+              // Access user settings
+              setState(() {
+                onTap(context, 4);
+              });
+            },
+            child: Container(
+              margin: const EdgeInsets.only(right: 7.5),
+              child: const CircleAvatar(
+                backgroundImage: NetworkImage(
+                  'https://avatars.githubusercontent.com/u/21986104',
+                ),
+              ),
+            ),
+          )
         ],
-        onTap: _onTap,
-        currentIndex: _selectedIndex(context),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: selectedIndex() >= _items.length ? Theme.of(context).disabledColor : Theme.of(context).primaryColor, // Faking a disabled color if the index is out of range
+        items: _items,
+        onTap: (int index) {
+          onTap(context, index);
+          _currentIndex = index;
+        },
+        currentIndex: (int index) {
+          return _currentIndex = index >= _items.length ? 0 : index;
+        }(_currentIndex),
       ),
     );
-  }
-
-  static int _selectedIndex(BuildContext context) {
-    final String location = router.location;
-    if (location.startsWith('/home')) {
-      return 0;
-    }
-    if (location.startsWith('/devices')) {
-      return 1;
-    }
-    if (location.startsWith('/automations')) {
-      return 2;
-    }
-    return 0;
-  }
-
-  void _onTap(int index) {
-    switch (index) {
-      case 0:
-        return context.push('/home');
-      case 1:
-        return context.push('/devices');
-      case 2:
-        return context.push('/automations');
-      default:
-        return context.push('/home');
-    }
   }
 }
