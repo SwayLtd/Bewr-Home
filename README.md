@@ -8,12 +8,22 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 
 ## Roadmap
 ### Planned Features
-* Add Desktop responsive design with opened drawer by default
-* Visual flow-based programming for the automations
+* Desktop responsive design (with opened drawer by default)
 * Theme integration on all screens
+* Visual flow-based programming for the automations
 * Analytics and error reporting
 * Implementing notification
 * Building all screens
+* Third-party integrations
+* Welcome screen
+
+### Implemented Features
+* Responsive design for mobile and tablet
+* Localization (English and French)
+* App theme integration (light and dark)
+* Route management with GoRouter
+* BLoC architecture
+* Feature-First file structure
 
 See the [open issues](https://github.com/BewrApp/Bewr-Home/issues) for a list of proposed features (and known issues).
 
