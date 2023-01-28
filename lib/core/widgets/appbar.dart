@@ -1,3 +1,4 @@
+import 'package:bewr_home/core/l10n.dart';
 import 'package:bewr_home/core/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                 children: <Widget>[
                   ListTile(
                     leading: const Icon(Icons.home_outlined),
-                    title: const Text('Home'), // TODO: Localize
+                    title: Text(context.loc.drawerHome),
                     selected: selectedIndex() == 0,
                     onTap: () {
                       setState(() {
@@ -32,7 +33,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.devices_other_outlined),
-                    title: const Text('Devices'), // TODO: Localize
+                    title: Text(context.loc.drawerDevices),
                     selected: selectedIndex() == 1,
                     onTap: () {
                       setState(() {
@@ -42,7 +43,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.auto_awesome_outlined),
-                    title: const Text('Automations'), // TODO: Localize
+                    title: Text(context.loc.drawerAutomations),
                     selected: selectedIndex() == 2,
                     onTap: () {
                       setState(() {
@@ -52,7 +53,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.notifications_outlined),
-                    title: const Text('Activity'), // TODO: Localize
+                    title: Text(context.loc.drawerActivity),
                     selected: selectedIndex() == 3,
                     onTap: () {
                       setState(() {
@@ -73,7 +74,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   const Divider(color: Colors.grey),
                   ListTile(
                     leading: const Icon(Icons.settings_outlined),
-                    title: const Text('Settings'), // TODO: Localize
+                    title: Text(context.loc.drawerSettings),
                     selected: selectedIndex() == 4,
                     onTap: () {
                       setState(() {
@@ -83,7 +84,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.feedback_outlined),
-                    title: const Text('Feedback'), // TODO: Localize
+                    title: Text(context.loc.drawerFeedback),
                     selected: selectedIndex() == 5,
                     onTap: () {
                       setState(() {
@@ -93,7 +94,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.help_outline),
-                    title: const Text('Help'), // TODO: Localize
+                    title: Text(context.loc.drawerHelp),
                     selected: selectedIndex() == 6,
                     onTap: () {
                       setState(() {
@@ -108,7 +109,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
         ),
       ),
       appBar: AppBar(
-        title: const Text('Bewr'), // TODO: Localize
+        title: Text(context.loc.appbarTitle),
         actions: <Widget>[
           GestureDetector(
             onTap: () {
@@ -162,7 +163,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                       ),
                       TextButton(
                         child: Text(
-                          'Home', // TODO: Localize
+                          context.loc.bottomAppbarHome,
                           style: TextStyle(
                             // Depending on the selected index, set the color of the text
                             color: selectedIndex() == 0
@@ -204,7 +205,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                       ),
                       TextButton(
                         child: Text(
-                          'Devices', // TODO: Localize
+                          context.loc.bottomAppbarDevices,
                           style: TextStyle(
                             // Depending on the selected index, set the color of the text
                             color: selectedIndex() == 1
@@ -246,7 +247,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                       ),
                       TextButton(
                         child: Text(
-                          'Automations', // TODO: Localize
+                          context.loc.bottomAppbarAutomations,
                           style: TextStyle(
                             // Depending on the selected index, set the color of the text
                             color: selectedIndex() == 2

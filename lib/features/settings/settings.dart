@@ -1,5 +1,6 @@
 // Use shared_preferences package to store some settings
 
+import 'package:bewr_home/core/l10n.dart';
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -17,7 +18,7 @@ class _SettingsPageState extends State<SettingsPage> {
       body: ListView(
         children: <Widget>[
           SwitchListTile(
-            title: const Text('Notifications'), // TODO: Localize
+            title: Text(context.loc.settingsNotifications),
             value: _notificationsEnabled,
             onChanged: (value) {
               setState(() {
@@ -26,7 +27,7 @@ class _SettingsPageState extends State<SettingsPage> {
             },
           ),
           ListTile(
-            title: const Text('Langue'), // TODO: Localize
+            title: Text(context.loc.settingsLanguage),
             trailing: DropdownButton<String>(
               value: _language,
               onChanged: (value) {
@@ -34,7 +35,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   _language = value!;
                 });
               },           
-              items: ['Français', 'English', 'Español'] // TODO: Localize
+              items: [context.loc.settingsLanguageEnglish, context.loc.settingsLanguageFrench, context.loc.settingsLanguageSpanish]
                   .map((language) => DropdownMenuItem(
                         value: language,
                         child: Text(language),
@@ -43,7 +44,7 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
           ListTile(
-            title: const Text('Unité de température'), // TODO: Localize
+            title: Text(context.loc.settingsTemperatureUnit),
             trailing: DropdownButton<int>(
               value: _temperatureUnit,
               onChanged: (value) {
@@ -51,14 +52,14 @@ class _SettingsPageState extends State<SettingsPage> {
                   _temperatureUnit = value!;
                 });
               },
-              items: const [
+              items: [
                 DropdownMenuItem(
                   value: 0,
-                  child: Text('°C'), // TODO: Localize
+                  child: Text(context.loc.settingsTemperatureUnitCelsius),
                 ),
                 DropdownMenuItem(
                   value: 1,
-                  child: Text('°F'), // TODO: Localize
+                  child: Text(context.loc.settingsTemperatureUnitFahrenheit),
                 ),
               ],
             ),
@@ -70,5 +71,5 @@ class _SettingsPageState extends State<SettingsPage> {
 }
 
 bool _notificationsEnabled = true; // TODO: Get from shared_preferences
-String _language = 'Français'; // TODO: Get from shared_preferences
+String _language = 'Français'; // TODO: Get from shared_preferences // TODO: Localize
 int _temperatureUnit = 0; // TODO: Get from shared_preferences

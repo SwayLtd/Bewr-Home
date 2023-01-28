@@ -20,11 +20,11 @@ class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
   ),
   BottomNavigationBarItem(
     icon: Icon(Icons.devices_other_outlined),
-    label: 'Devices',// TODO: Localize
+    label: 'Devices', // TODO: Localize
   ),
   BottomNavigationBarItem(
     icon: Icon(Icons.auto_awesome_outlined),
-    label: 'Automations',// TODO: Localize
+    label: 'Automations', // TODO: Localize
   ),
 ];
 

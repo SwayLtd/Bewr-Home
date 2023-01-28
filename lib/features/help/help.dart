@@ -1,3 +1,4 @@
+import 'package:bewr_home/core/l10n.dart';
 import 'package:flutter/material.dart';
 
 class HelpPage extends StatelessWidget {
@@ -10,14 +11,14 @@ class HelpPage extends StatelessWidget {
         children: <Widget>[
           ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text("Paramètres de l'appareil"), // TODO: Localize
+            title: Text(context.loc.helpDeviceSettings),
             onTap: () {
               // Route to device settings
             },
           ),
           ListTile(
             leading: const Icon(Icons.help),
-            title: const Text('Aide et assistance'), // TODO: Localize
+            title: Text(context.loc.helpHelpAssistance),
             onTap: () {
               // Route to help page
             },

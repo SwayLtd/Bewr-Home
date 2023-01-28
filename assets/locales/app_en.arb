@@ -1,15 +1,119 @@
 {
 	"title": "Bewr Home",
-	"daily": "Daily",
-	"helloWorld": "Hello World!",
-	"@helloWorld": {
-	  "description": "The conventional newborn programmer greeting"
-	},
+
+
+
+	"routesNameHome": "Home",
+	"routesNameDevices": "Devices",
+	"routesNameAutomations": "Automations",
+	"routesNameActivity": "Activity",
+	"routesNameSettings": "Settings",
+	"routesNameFeedback": "Feedback",
+	"routesNameHelp": "Help",
+	"routesNameTest": "Test",
+
+
+
+	"drawerHome": "Home",
+	"drawerDevices": "Devices",
+	"drawerAutomations": "Automations",
+	"drawerActivity": "Activity",
+	"drawerSettings": "Settings",
+	"drawerFeedback": "Feedback",
+	"drawerHelp": "Help",
+
+	"appbarTitle": "Bewr",
+
+	"bottomAppbarHome": "Home",
+	"bottomAppbarDevices": "Devices",
+	"bottomAppbarAutomations": "Automations",
+
+
+
+	"bottomnavbarHome": "Home",
+	"bottomnavbarDevices": "Devices",
+	"bottomnavbarAutomations": "Automations",
+
+
 
 	"homeItem1": "Item 1",
 	"homeItem2": "Item 2",
 	"homeItem3": "Item 3",
 	"homeItem4": "Item 4",
 	"homeItem5": "Item 5",
-	"homeItem6": "Item 6"
+	"homeItem6": "Item 6",
+
+
+
+	"routineCategoryDaily": "Daily",
+	"routineCategoryEvening": "Evening",
+
+	"routineTitleWakeup": "Wake Up",
+	"routineTitleLeaving": "Leaving",
+	"routineTitleFilm": "Film",
+	"routineTitleDinner": "Dinner",
+
+	"routineDescriptionWakeup": "Turn on the lights and play music",
+	"routineDescriptionLeaving": "Turn off the lights and put the TV on standby",
+	"routineDescriptionFilm": "Turn on the TV and soundbar",
+	"routineDescriptionDinner": "Turn on the kitchen lights and play music",
+
+
+
+	"devicesLightIntensity": "Light Intensity",
+	
+	"devicesStateON": "ON",
+	"devicesStateOFF": "OFF",
+	"devicesStateONLINE": "ONLINE",
+	"devicesStateOFFLINE": "OFFLINE",
+	"devicesStateCONNECTING": "CONNECTING",
+	"devicesStateTemperature": "X °C",
+
+	"devicesNameLight": "Living light",
+	"devicesNameThermostat": "Thermostat",
+	"devicesNameCamera": "Camera",
+	"devicesNameOutlet": "Outlet",
+
+
+
+	"feedbackTitle": "Feedback title",
+	"feedbackTitlePlaceholder": "Enter a title",
+
+	"feedbackEmail": "Email (optional)",
+	"feedbackEmailPlaceholder": "Enter your email",
+
+	"feedbackDescription": "Description of the problem",
+	"feedbackDescriptionPlaceholder": "Enter a description of the problem",
+
+	"feedbackAttachement": "Attachement",
+	"feedbackAttachementPlaceholder": "Attach a file",
+
+	"feedbackSubmit" : "Submit",
+
+
+
+	"helpDeviceSettings": "Device settings",
+	"helpHelpAssistance": "Help and assistance",
+
+
+
+	"settingsNotifications": "Notifications",
+	"settingsLanguage": "Language",
+		"settingsLanguageEnglish": "English",
+		"settingsLanguageFrench": "Français",
+		"settingsLanguageSpanish": "Español",
+	"settingsTemperatureUnit": "Temperature unit",
+		"settingsTemperatureUnitCelsius": "°C",
+		"settingsTemperatureUnitFahrenheit": "°F",
+
+
+
+	"testLocationKitchen": "Kitchen",
+
+	"testSuggestion1": "Add an automation to turn off the oven in case of smoke detection by the smoke detector",
+	"testSuggestion2": "Add automation to open kitchen windows when the room temperature exceeds a certain threshold",
+	"testSuggestion3": "Add automation to turn on the kitchen light when the motion sensor detects movement at night",
+	"testSuggestion4": "Buy a water leak detector to be informed immediately in case of a water leak in your kitchen",
+
+	"@@locale" : "en"
 }

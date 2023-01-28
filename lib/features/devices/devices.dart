@@ -8,7 +8,7 @@ class DevicesPage extends StatefulWidget {
 }
 
 class _DevicesPageState extends State<DevicesPage> {
-  final List<SmartDevice> _devices = [livingLight, thermostat, camera, outlet];
+  final List<SmartDevice> _devices = [light, thermostat, camera, outlet];
 
   void _showLampControlBottomSheet() {
     int lampIntensity = 50; // TEST
@@ -86,7 +86,7 @@ class _DevicesPageState extends State<DevicesPage> {
   }
 }
 
-final livingLight = SmartDevice('Lampe de salon', 'Allumée', Icons.lightbulb_outline); // TODO: Localize
+final light = SmartDevice('Lampe de salon', 'Allumée', Icons.lightbulb_outline); // TODO: Localize
 final thermostat = SmartDevice('Thermostat', '22°C', Icons.ac_unit); // TODO: Localize
 final camera = SmartDevice('Caméra de surveillance', 'En ligne', Icons.videocam); // TODO: Localize
 final outlet = SmartDevice('Prise de salon', 'Allumée', Icons.power_input); // TODO: Localize

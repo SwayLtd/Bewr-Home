@@ -12,21 +12,21 @@ class AutomationsPage extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(top: 16, bottom: 8, left: 8),
             child: Text(
-              context.loc.daily,
+              context.loc.routineCategoryDaily,
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           RoutineTile(
-            title: 'Réveil', // TODO: Localize
-            description: 'Allume les lumières et lance la musique', // TODO: Localize
+            title: context.loc.routineTitleWakeup,
+            description: context.loc.routineDescriptionWakeup,
             icon: Icons.alarm,
             onPressed: () {
               // Launch the wake up routine here
             },
           ),
           RoutineTile(
-            title: 'Départ', // TODO: Localize
-            description: 'Eteint les lumières et met en veille la télévision', // TODO: Localize
+            title: context.loc.routineTitleLeaving,
+            description: context.loc.routineDescriptionLeaving,
             icon: Icons.commute,
             onPressed: () {
               // Launch the departure routine here
@@ -35,21 +35,21 @@ class AutomationsPage extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(top: 16, bottom: 8, left: 8),
             child: Text(
-              'Soirée', // TODO: Localize
+              context.loc.routineCategoryEvening,
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           RoutineTile(
-            title: 'Film', // TODO: Localize
-            description: 'Allume la télévision et la barre de son', // TODO: Localize
+            title: context.loc.routineTitleFilm,
+            description: context.loc.routineDescriptionFilm,
             icon: Icons.movie,
             onPressed: () {
               // Launch the movie routine here
             },
           ),
           RoutineTile(
-            title: 'Dîner', // TODO: Localize
-            description: 'Allume les lumières de la cuisine et lance de la musique', // TODO: Localize
+            title: context.loc.routineTitleDinner,
+            description: context.loc.routineDescriptionDinner,
             icon: Icons.restaurant,
             onPressed: () {
               // Launch the dinner routine here

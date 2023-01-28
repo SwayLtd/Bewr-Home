@@ -1,4 +1,6 @@
 # https://docs.flutter.dev/development/accessibility-and-localization/internationalization
+# https://codewithandrea.com/articles/flutter-localization-build-context-extension/
+# flutter gen-l10n
 
 arb-dir: assets/locales
 template-arb-file: app_en.arb

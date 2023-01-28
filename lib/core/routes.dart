@@ -11,6 +11,7 @@ import 'package:bewr_home/features/home/home.dart';
 import 'package:bewr_home/features/settings/settings.dart';
 import 'package:bewr_home/features/test/test.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 

@@ -1,3 +1,4 @@
+import 'package:bewr_home/core/l10n.dart';
 import 'package:flutter/material.dart';
 
 class FeedbackPage extends StatefulWidget {
@@ -22,36 +23,36 @@ class _FeedbackPageState extends State<FeedbackPage> {
             child: Column(
               children: <Widget>[
                 TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'Titre du feedback', // TODO: Localize
+                  decoration: InputDecoration(
+                    labelText: context.loc.feedbackTitle,
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Veuillez entrer un titre'; // TODO: Localize
+                      return context.loc.feedbackTitlePlaceholder;
                     }
                     return null;
                   },
                   onSaved: (value) {},
                 ),
                 TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'Adresse email (facultatif)', // TODO: Localize
+                  decoration: InputDecoration(
+                    labelText: context.loc.feedbackEmail,
                   ),
                   validator: (value) {
                     if (value!.isNotEmpty && !value.contains('@')) {
-                      return 'Veuillez entrer une adresse email valide'; // TODO: Localize
+                      return context.loc.feedbackEmailPlaceholder;
                     }
                     return null;
                   },
                   onSaved: (value) {},
                 ),
                 TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'Description du problème', // TODO: Localize
+                  decoration: InputDecoration(
+                    labelText: context.loc.feedbackDescription,
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Veuillez entrer une description'; // TODO: Localize
+                      return context.loc.feedbackDescriptionPlaceholder;
                     }
                     return null;
                   },
@@ -61,10 +62,9 @@ class _FeedbackPageState extends State<FeedbackPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    const Text('Pièces jointes'), // TODO: Localize
+                    Text(context.loc.feedbackAttachement),
                     TextButton(
-                      child: const Text(
-                          'Ajouter une pièce jointe'), // TODO: Localize
+                      child: Text(context.loc.feedbackAttachementPlaceholder),
                       onPressed: () {
                         // TODO: Implement file picker
                       },
@@ -91,7 +91,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                 Container(
                   margin: const EdgeInsets.only(top: 16),
                   child: TextButton(
-                    child: const Text('Envoyer'),
+                    child: Text(context.loc.feedbackSubmit),
                     onPressed: () {
                       // TODO: Implement send feedback
                     },

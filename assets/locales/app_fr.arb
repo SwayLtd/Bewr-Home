@@ -1,5 +1,119 @@
 {
-    "title": "Bewr Maison",
-    "daily": "Quotidien",
-    "helloWorld": "Bonjour au monde !"
+	"title": "Bewr Home",
+
+
+
+	"routesNameHome": "Maison",
+	"routesNameDevices": "Appareils",
+	"routesNameAutomations": "Routines",
+	"routesNameActivity": "Activités",
+	"routesNameSettings": "Paramètres",
+	"routesNameFeedback": "Commentaires",
+	"routesNameHelp": "Aide",
+	"routesNameTest": "Test",
+
+
+
+	"drawerHome": "Maison",
+	"drawerDevices": "Appareils",
+	"drawerAutomations": "Routines",
+	"drawerActivity": "Activités",
+	"drawerSettings": "Paramètres",
+	"drawerFeedback": "Commentaires",
+	"drawerHelp": "Aide",
+
+	"appbarTitle": "Bewr",
+
+	"bottomAppbarHome": "Maison",
+	"bottomAppbarDevices": "Appareils",
+	"bottomAppbarAutomations": "Routines",
+
+
+
+	"bottomnavbarHome": "Maison",
+	"bottomnavbarDevices": "Appariels",
+	"bottomnavbarAutomations": "Routines",
+
+
+    
+    "homeItem1": "Objet 1",
+	"homeItem2": "Objet 2",
+	"homeItem3": "Objet 3",
+	"homeItem4": "Objet 4",
+	"homeItem5": "Objet 5",
+	"homeItem6": "Objet 6",
+
+
+
+	"routineCategoryDaily": "Quotidien",
+	"routineCategoryEvening": "Soirée",
+
+	"routineTitleWakeup": "Réveil",
+	"routineTitleLeaving": "Départ",
+	"routineTitleFilm": "Film",
+	"routineTitleDinner": "Dîner",
+
+	"routineDescriptionWakeup": "Allume les lumières et mettez de la musique",
+	"routineDescriptionLeaving": "Éteind les lumières et mettez le téléviseur en veille.",
+	"routineDescriptionFilm": "Allume la télévision et la barre de son",
+	"routineDescriptionDinner": "Allume les lumières de la cuisine et mettez de la musique",
+
+
+
+	"devicesLightIntensity": "Intensité lumineuse",
+	
+	"devicesStateON": "ON",
+	"devicesStateOFF": "OFF",
+	"devicesStateONLINE": "EN LIGNE",
+	"devicesStateOFFLINE": "HORS LIGNE",
+	"devicesStateCONNECTING": "CONNEXION",
+	"devicesStateTemperature": "X °C",
+
+	"devicesNameLight": "Lumière du salon",
+	"devicesNameThermostat": "Thermostat",
+	"devicesNameCamera": "Caméra",
+	"devicesNameOutlet": "Prise",
+
+
+
+	"feedbackTitle": "Titre du commentaire",
+	"feedbackTitlePlaceholder": "Entrez un titre",
+
+	"feedbackEmail": "Email (facultatif)",
+	"feedbackEmailPlaceholder": "Entrez votre email",
+
+	"feedbackDescription": "Description du problème",
+	"feedbackDescriptionPlaceholder": "Décrivez votre problème",
+
+	"feedbackAttachement": "Pièce jointe",
+	"feedbackAttachementPlaceholder": "Ajouter une pièce jointe",
+
+	"feedbackSubmit": "Envoyer",
+
+
+
+	"helpDeviceSettings": "Paramètres de l'appareil",
+	"helpHelpAssistance": "Aide et assistance",
+
+
+
+	"settingsNotifications": "Notifications",
+	"settingsLanguage": "Langue",
+		"settingsLanguageEnglish": "English",
+		"settingsLanguageFrench": "Français",
+		"settingsLanguageSpanish": "Español",
+	"settingsTemperatureUnit": "Unité de température",
+		"settingsTemperatureUnitCelsius": "°C",
+		"settingsTemperatureUnitFahrenheit": "°F",
+
+
+
+	"testLocationKitchen": "Cuisine",
+
+	"testSuggestion1": "Ajouter une automatisation pour éteindre le four en cas de détection de fumée par le détecteur de fumée",
+	"testSuggestion2": "Ajouter l'automatisation de l'ouverture des fenêtres de la cuisine lorsque la température ambiante dépasse un certain seuil.",
+	"testSuggestion3": "Ajoutez l'automatisation pour allumer la lumière de la cuisine lorsque le détecteur de mouvement détecte un mouvement la nuit.",
+	"testSuggestion4": "Achetez un détecteur de fuite d'eau pour être informé immédiatement en cas de fuite d'eau dans votre cuisine.",
+
+    "@@locale" : "fr"
 }

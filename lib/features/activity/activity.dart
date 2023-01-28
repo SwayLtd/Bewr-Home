@@ -17,7 +17,6 @@ class ActivityPage extends StatelessWidget {
                 Text(
                   'Tâche 1',
                   style: TextStyle(
-                    color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -26,7 +25,7 @@ class ActivityPage extends StatelessWidget {
                 Text(
                   'Dec 10, 12:00',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white60,
                     fontSize: 14,
                   ),
                 ),
@@ -64,7 +63,7 @@ class ActivityPage extends StatelessWidget {
                   Text(
                     'Dec 10, 11:00',
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white60,
                       fontSize: 14,
                     ),
                   ),
@@ -102,7 +101,7 @@ class ActivityPage extends StatelessWidget {
                 Text(
                   'Dec 10, 10:00',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white60,
                     fontSize: 14,
                   ),
                 ),

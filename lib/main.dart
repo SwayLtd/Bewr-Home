@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false, // Remove debug banner
-      title: "Bewr Home", // TO DO: Check if this can be localized
+      title: "Bewr Home", // TODO: Check if this can be localized
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       routerConfig: router,
