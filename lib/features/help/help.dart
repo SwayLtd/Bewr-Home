@@ -10,16 +10,16 @@ class HelpPage extends StatelessWidget {
         children: <Widget>[
           ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text("Paramètres de l'appareil"),
+            title: const Text("Paramètres de l'appareil"), // TODO: Localize
             onTap: () {
-              //Navigator.push(context, CupertinoPageRoute(builder: (context) => Settings()));
+              // Route to device settings
             },
           ),
           ListTile(
             leading: const Icon(Icons.help),
-            title: const Text('Aide et assistance'),
+            title: const Text('Aide et assistance'), // TODO: Localize
             onTap: () {
-              //Navigator.push(context, CupertinoPageRoute(builder: (context) => Feedback()));
+              // Route to help page
             },
           ),
         ],

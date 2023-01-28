@@ -23,53 +23,50 @@ class _FeedbackPageState extends State<FeedbackPage> {
               children: <Widget>[
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'Titre du feedback',
+                    labelText: 'Titre du feedback', // TODO: Localize
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Veuillez entrer un titre';
+                      return 'Veuillez entrer un titre'; // TODO: Localize
                     }
                     return null;
                   },
-                  onSaved: (value) {
-                  },
+                  onSaved: (value) {},
                 ),
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'Adresse email (facultatif)',
+                    labelText: 'Adresse email (facultatif)', // TODO: Localize
                   ),
                   validator: (value) {
                     if (value!.isNotEmpty && !value.contains('@')) {
-                      return 'Veuillez entrer une adresse email valide';
+                      return 'Veuillez entrer une adresse email valide'; // TODO: Localize
                     }
                     return null;
                   },
-                  onSaved: (value) {
-                  },
+                  onSaved: (value) {},
                 ),
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'Description du problème',
+                    labelText: 'Description du problème', // TODO: Localize
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Veuillez entrer une description';
+                      return 'Veuillez entrer une description'; // TODO: Localize
                     }
                     return null;
                   },
-                  onSaved: (value) {
-                  },
+                  onSaved: (value) {},
                   maxLines: 5,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    const Text('Pièces jointes'),
+                    const Text('Pièces jointes'), // TODO: Localize
                     TextButton(
-                      child: const Text('Ajouter une pièce jointe'),
+                      child: const Text(
+                          'Ajouter une pièce jointe'), // TODO: Localize
                       onPressed: () {
-                        // Ouvrir un sélecteur de fichier et ajouter le fichier sélectionné à la liste des pièces jointes ici
-                        // ...
+                        // TODO: Implement file picker
                       },
                     ),
                   ],
@@ -85,8 +82,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                       trailing: IconButton(
                         icon: const Icon(Icons.delete),
                         onPressed: () {
-                          // Supprimer la pièce jointe de la liste ici
-                          // ...
+                          // TODO: Implement delete attachment
                         },
                       ),
                     );
@@ -97,11 +93,8 @@ class _FeedbackPageState extends State<FeedbackPage> {
                   child: TextButton(
                     child: const Text('Envoyer'),
                     onPressed: () {
-                          //if (_formKey.currentState.validate()) {
-                          // Envoyer le feedback ici
-                          // ...
-                          //}
-                        },
+                      // TODO: Implement send feedback
+                    },
                   ),
                 ),
               ],
@@ -113,6 +106,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
   }
 }
 
+// Attachment model
 class Attachment {
   final String name;
   final String path;

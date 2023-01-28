@@ -1,4 +1,4 @@
-import 'package:bewr_home/core/localizations.dart';
+import 'package:bewr_home/core/l10n.dart';
 import 'package:flutter/material.dart';
 
 class AutomationsPage extends StatelessWidget {
@@ -17,50 +17,49 @@ class AutomationsPage extends StatelessWidget {
             ),
           ),
           RoutineTile(
-            title: 'Réveil',
-            description: 'Allume les lumières et lance la musique',
+            title: 'Réveil', // TODO: Localize
+            description: 'Allume les lumières et lance la musique', // TODO: Localize
             icon: Icons.alarm,
             onPressed: () {
-              // Lancer la routine de réveil ici
+              // Launch the wake up routine here
             },
           ),
           RoutineTile(
-            title: 'Départ',
-            description: 'Eteint les lumières et met en veille la télévision',
+            title: 'Départ', // TODO: Localize
+            description: 'Eteint les lumières et met en veille la télévision', // TODO: Localize
             icon: Icons.commute,
             onPressed: () {
-              // Lancer la routine de départ ici
+              // Launch the departure routine here
             },
           ),
           Container(
             margin: const EdgeInsets.only(top: 16, bottom: 8, left: 8),
             child: Text(
-              'Soirée',
+              'Soirée', // TODO: Localize
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           RoutineTile(
-            title: 'Film',
-            description: 'Allume la télévision et la barre de son',
+            title: 'Film', // TODO: Localize
+            description: 'Allume la télévision et la barre de son', // TODO: Localize
             icon: Icons.movie,
             onPressed: () {
-              // Lancer la routine de film ici
+              // Launch the movie routine here
             },
           ),
           RoutineTile(
-            title: 'Dîner',
-            description: 'Allume les lumières de la cuisine et lance de la musique',
+            title: 'Dîner', // TODO: Localize
+            description: 'Allume les lumières de la cuisine et lance de la musique', // TODO: Localize
             icon: Icons.restaurant,
             onPressed: () {
-              // Lancer la routine de dîner ici
+              // Launch the dinner routine here
             },
           ),
-          // Ajoutez autant de routines et de catégories que nécessaire ici
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Ouvrez la page de création de routine ici
+          // Open the automation creation page here
         },
         child: const Icon(Icons.add),
       ),

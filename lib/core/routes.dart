@@ -27,13 +27,13 @@ final GoRouter router = GoRouter(
         return ResponsiveWrapper.builder(
           Stack(
             children: <Widget>[
-              ResponsiveVisibility(
+              ResponsiveVisibility( // Show bottom navigation bar only on mobiles (smaller than TABLET)
                 hiddenWhen: const [
                   Condition.largerThan(name: MOBILE),
                 ],
                 child: ScaffoldWithNavBar(child: child),
               ),
-              ResponsiveVisibility(
+              ResponsiveVisibility( // Show app bar only on tablets and desktops (larger than MOBILE)
                 hiddenWhen: const [
                   Condition.smallerThan(name: TABLET),
                 ],
@@ -41,38 +41,41 @@ final GoRouter router = GoRouter(
               ),
             ],
           ),
-          // maxWidth: 1200,
-          // minWidth: 480,
           defaultScale: true,
           breakpoints: const [
-            ResponsiveBreakpoint.resize(480, name: MOBILE),
-            ResponsiveBreakpoint.autoScale(800, name: TABLET),
-            ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+            ResponsiveBreakpoint.resize(480, name: MOBILE), // 480 is the default size
+            ResponsiveBreakpoint.autoScale(800, name: TABLET), // 800 is the default size
+            ResponsiveBreakpoint.resize(1000, name: DESKTOP), // 1000 is the default size
             ResponsiveBreakpoint.autoScale(2460, name: '4K'),
           ],
         );
       },
+      // NoTransitionPage is a custom widget that disables the default page transition
       routes: [
         GoRoute(
           path: '/home',
+          name: "Home", // TODO: Localize
           pageBuilder: (context, state) => const NoTransitionPage(
             child: HomePage(),
           ),
         ),
         GoRoute(
           path: '/devices',
+          name: "Devices", // TODO: Localize
           pageBuilder: (context, state) => const NoTransitionPage(
             child: DevicesPage(),
           ),
         ),
         GoRoute(
           path: '/automations',
+          name: "Automations", // TODO: Localize
           pageBuilder: (context, state) => const NoTransitionPage(
             child: AutomationsPage(),
           ),
         ),
         GoRoute(
           path: '/activity',
+          name: "Activity", // TODO: Localize
           pageBuilder: (context, state) => NoTransitionPage(
             key: state.pageKey,
             child: const ActivityPage(),
@@ -80,24 +83,28 @@ final GoRouter router = GoRouter(
         ),
         GoRoute(
           path: '/settings',
+          name: "Settings", // TODO: Localize
           pageBuilder: (context, state) => const NoTransitionPage(
             child: SettingsPage(),
           ),
         ),
         GoRoute(
           path: '/feedback',
+          name: "Feedback", // TODO: Localize
           pageBuilder: (context, state) => const NoTransitionPage(
             child: FeedbackPage(),
           ),
         ),
         GoRoute(
           path: '/help',
+          name: "Help", // TODO: Localize
           pageBuilder: (context, state) => const NoTransitionPage(
             child: HelpPage(),
           ),
         ),
         GoRoute(
           path: '/test',
+          name: "Test", // TODO: Localize
           pageBuilder: (context, state) => const NoTransitionPage(
             child: TestPage(),
           ),
@@ -107,7 +114,7 @@ final GoRouter router = GoRouter(
   ],
 );
 
-int selectedIndex() {
+int selectedIndex() { // Returns the index of the current page
   final String location = router.location;
   if (location.startsWith('/home')) {
     return 0;
@@ -136,7 +143,7 @@ int selectedIndex() {
   return 0;
 }
 
-void onTap(BuildContext context, int index) {
+void onTap(BuildContext context, int index) { // Navigates to the page corresponding to the index
   switch (index) {
     case 0:
       return context.push('/home');
@@ -154,7 +161,7 @@ void onTap(BuildContext context, int index) {
       return context.push('/help');
     case 7:
       return context.push('/test');
-    default:
-      return context.push('/home');
+    default: // Need to check if this is not creating a loop when we are faking the index for the bottom navigation bar
+      return context.push('/home'); // If the index is not valid, navigate to the home page
   }
 }

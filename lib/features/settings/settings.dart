@@ -13,11 +13,11 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Autres idées : Mode sombre, Volume des alarmes, Géolocalisation, Fuseau horaire, Animations, Mode avancé
+      // Other ideas: Dark mode, Alarm volume, Geolocation, Time zone, Animations, Advanced mode
       body: ListView(
         children: <Widget>[
           SwitchListTile(
-            title: const Text('Notifications'),
+            title: const Text('Notifications'), // TODO: Localize
             value: _notificationsEnabled,
             onChanged: (value) {
               setState(() {
@@ -26,7 +26,7 @@ class _SettingsPageState extends State<SettingsPage> {
             },
           ),
           ListTile(
-            title: const Text('Langue'),
+            title: const Text('Langue'), // TODO: Localize
             trailing: DropdownButton<String>(
               value: _language,
               onChanged: (value) {
@@ -34,7 +34,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   _language = value!;
                 });
               },           
-              items: ['Français', 'English', 'Español']
+              items: ['Français', 'English', 'Español'] // TODO: Localize
                   .map((language) => DropdownMenuItem(
                         value: language,
                         child: Text(language),
@@ -43,7 +43,7 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
           ListTile(
-            title: const Text('Unité de température'),
+            title: const Text('Unité de température'), // TODO: Localize
             trailing: DropdownButton<int>(
               value: _temperatureUnit,
               onChanged: (value) {
@@ -54,28 +54,21 @@ class _SettingsPageState extends State<SettingsPage> {
               items: const [
                 DropdownMenuItem(
                   value: 0,
-                  child: Text('°C'),
+                  child: Text('°C'), // TODO: Localize
                 ),
                 DropdownMenuItem(
                   value: 1,
-                  child: Text('°F'),
+                  child: Text('°F'), // TODO: Localize
                 ),
               ],
             ),
           ),
-          // Ajoutez autant de paramètres que nécessaire ici
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Enregistrez les modifications apportées aux paramètres ici
-        },
-        child: const Icon(Icons.save),
       ),
     );
   }
 }
 
-bool _notificationsEnabled = true;
-String _language = 'Français';
-int _temperatureUnit = 0;
+bool _notificationsEnabled = true; // TODO: Get from shared_preferences
+String _language = 'Français'; // TODO: Get from shared_preferences
+int _temperatureUnit = 0; // TODO: Get from shared_preferences

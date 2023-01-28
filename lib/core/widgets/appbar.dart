@@ -1,6 +1,5 @@
 import 'package:bewr_home/core/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class ScaffoldWithAppBar extends StatefulWidget {
   const ScaffoldWithAppBar({super.key, required this.child});
@@ -11,7 +10,6 @@ class ScaffoldWithAppBar extends StatefulWidget {
 }
 
 class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
-  /// The widget to display in the body of the Scaffold.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,12 +17,12 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
         child: Column(
           children: <Widget>[
             Expanded(
-              // ListView contains a group of widgets that scroll inside the drawer
               child: ListView(
+                // This ensures the drawer can scroll if there isn't enough vertical space to fit everything
                 children: <Widget>[
                   ListTile(
                     leading: const Icon(Icons.home_outlined),
-                    title: const Text('Home'),
+                    title: const Text('Home'), // TODO: Localize
                     selected: selectedIndex() == 0,
                     onTap: () {
                       setState(() {
@@ -34,7 +32,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.devices_other_outlined),
-                    title: const Text('Devices'),
+                    title: const Text('Devices'), // TODO: Localize
                     selected: selectedIndex() == 1,
                     onTap: () {
                       setState(() {
@@ -44,7 +42,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.auto_awesome_outlined),
-                    title: const Text('Automations'),
+                    title: const Text('Automations'), // TODO: Localize
                     selected: selectedIndex() == 2,
                     onTap: () {
                       setState(() {
@@ -54,7 +52,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.notifications_outlined),
-                    title: const Text('Activity'),
+                    title: const Text('Activity'), // TODO: Localize
                     selected: selectedIndex() == 3,
                     onTap: () {
                       setState(() {
@@ -75,7 +73,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   const Divider(color: Colors.grey),
                   ListTile(
                     leading: const Icon(Icons.settings_outlined),
-                    title: const Text('Settings'),
+                    title: const Text('Settings'), // TODO: Localize
                     selected: selectedIndex() == 4,
                     onTap: () {
                       setState(() {
@@ -85,7 +83,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.feedback_outlined),
-                    title: const Text('Feedback'),
+                    title: const Text('Feedback'), // TODO: Localize
                     selected: selectedIndex() == 5,
                     onTap: () {
                       setState(() {
@@ -95,7 +93,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   ),
                   ListTile(
                     leading: const Icon(Icons.help_outline),
-                    title: const Text('Help'),
+                    title: const Text('Help'), // TODO: Localize
                     selected: selectedIndex() == 6,
                     onTap: () {
                       setState(() {
@@ -110,7 +108,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
         ),
       ),
       appBar: AppBar(
-        title: const Text('Bewr'),
+        title: const Text('Bewr'), // TODO: Localize
         actions: <Widget>[
           GestureDetector(
             onTap: () {
@@ -120,21 +118,24 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
               });
             },
             child: Container(
-              margin: const EdgeInsets.only(right: 7.5),
+              margin: const EdgeInsets.only(
+                  right: 7.5), // // Add some margin to the right of the avatar
               child: const CircleAvatar(
                 backgroundImage: NetworkImage(
-                  'https://avatars.githubusercontent.com/u/21986104',
+                  'https://avatars.githubusercontent.com/u/21986104', // TODO: Get user avatar
                 ),
               ),
             ),
           )
         ],
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(36),
+          preferredSize:
+              const Size.fromHeight(36), // Set the height of the bottom menu
           child: SizedBox(
-            height: 36,
+            height: 36, // Set the height of the bottom menu
             child: ListView(
-              scrollDirection: Axis.horizontal,
+              scrollDirection: Axis
+                  .horizontal, // Make the menu list scrollable and horizontal
               children: <Widget>[
                 Theme(
                   data: Theme.of(context).copyWith(
@@ -147,11 +148,13 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   child: Stack(
                     children: [
                       Positioned(
+                        // This is the bottom line that will be displayed when the button is selected
                         left: 0,
                         right: 0,
                         bottom: 0,
                         child: Container(
                           height: 2,
+                          // Depending on the selected index, set the color of the bottom menu
                           color: selectedIndex() == 0
                               ? Theme.of(context).primaryColor
                               : Colors.transparent,
@@ -159,11 +162,12 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                       ),
                       TextButton(
                         child: Text(
-                          'Home',
+                          'Home', // TODO: Localize
                           style: TextStyle(
+                            // Depending on the selected index, set the color of the text
                             color: selectedIndex() == 0
                                 ? Theme.of(context).primaryColor
-                                : Theme.of(context).textTheme.bodyText1!.color,
+                                : Theme.of(context).textTheme.bodyLarge!.color,
                           ),
                         ),
                         onPressed: () {
@@ -186,11 +190,13 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   child: Stack(
                     children: [
                       Positioned(
+                        // This is the bottom line that will be displayed when the button is selected
                         left: 0,
                         right: 0,
                         bottom: 0,
                         child: Container(
                           height: 2,
+                          // Depending on the selected index, set the color of the bottom menu
                           color: selectedIndex() == 1
                               ? Theme.of(context).primaryColor
                               : Colors.transparent,
@@ -198,11 +204,12 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                       ),
                       TextButton(
                         child: Text(
-                          'Devices',
+                          'Devices', // TODO: Localize
                           style: TextStyle(
+                            // Depending on the selected index, set the color of the text
                             color: selectedIndex() == 1
                                 ? Theme.of(context).primaryColor
-                                : Theme.of(context).textTheme.bodyText1!.color,
+                                : Theme.of(context).textTheme.bodyLarge!.color,
                           ),
                         ),
                         onPressed: () {
@@ -225,11 +232,13 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                   child: Stack(
                     children: [
                       Positioned(
+                        // This is the bottom line that will be displayed when the button is selected
                         left: 0,
                         right: 0,
                         bottom: 0,
                         child: Container(
                           height: 2,
+                          // Depending on the selected index, set the color of the bottom menu
                           color: selectedIndex() == 2
                               ? Theme.of(context).primaryColor
                               : Colors.transparent,
@@ -237,11 +246,12 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
                       ),
                       TextButton(
                         child: Text(
-                          'Automations',
+                          'Automations', // TODO: Localize
                           style: TextStyle(
+                            // Depending on the selected index, set the color of the text
                             color: selectedIndex() == 2
                                 ? Theme.of(context).primaryColor
-                                : Theme.of(context).textTheme.bodyText1!.color,
+                                : Theme.of(context).textTheme.bodyLarge!.color,
                           ),
                         ),
                         onPressed: () {

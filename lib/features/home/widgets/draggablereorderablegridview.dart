@@ -28,13 +28,12 @@ class _DraggableReorderableGridViewState extends State<DraggableReorderableGridV
 
   @override
   Widget build(BuildContext context) {
+    // Generate a grid of widgets that can be dragged and reordered
     return GridView.count(
-      crossAxisCount: 2,
-      // crossAxisSpacing: 0,
-      // mainAxisSpacing: 0,
+      crossAxisCount: 2, // 2 columns
       children: List.generate(items.length, (index) {
         final item = items[index];
-        return DragTarget<Widget>(
+        return DragTarget<Widget>( // Widget that can receive a draggable widget
           onAccept: (Widget data) {
             setState(() {
               final int oldIndex = items.indexOf(data);
@@ -43,9 +42,9 @@ class _DraggableReorderableGridViewState extends State<DraggableReorderableGridV
             });
           },
           builder: (context, accepted, rejected) {
-            return LongPressDraggable<Widget>(
+            return LongPressDraggable<Widget>( // Widget that can be dragged
               data: item,
-              feedback: ShakeWidget(
+              feedback: ShakeWidget( // Widget that shakes when dragged
                 shakeConstant: ShakeLittleConstant1(),
                 autoPlay: true,
                 child: SizedBox(
@@ -54,9 +53,9 @@ class _DraggableReorderableGridViewState extends State<DraggableReorderableGridV
                   child: item,
                 ),
               ),
-              childWhenDragging: Container(
+              childWhenDragging: Container( // Widget that is shown when the draggable widget is being dragged
                 margin: const EdgeInsets.all(15),
-                child: DottedBorder(
+                child: DottedBorder( // Widget that shows a dotted border
                   color: Colors.grey,
                   dashPattern: const [8, 4],
                   strokeWidth: 2,
@@ -65,7 +64,7 @@ class _DraggableReorderableGridViewState extends State<DraggableReorderableGridV
                   child: Container(),
                 ),
               ),
-              child: item,
+              child: item, // Widget that is shown when the draggable widget is not being dragged
             );
           },
         );

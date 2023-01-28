@@ -1,5 +1,3 @@
-import 'package:bewr_home/core/routes.dart';
-import 'package:bewr_home/core/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,7 +20,7 @@ class AppTheme {
         statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
         statusBarBrightness: Brightness.light, // For iOS (dark icons)
       ),
-      elevation: 0.5, // configure the separator line under the AppBar
+      elevation: 0.5, // configure the separator line size under the AppBar
       color: Colors.white,
     ),
     textTheme: TextTheme(
@@ -73,7 +71,7 @@ class AppTheme {
         statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
         statusBarBrightness: Brightness.light, // For iOS (dark icons)
       ),
-      elevation: 0.5, // configure the separator line under the AppBar
+      elevation: 0.5, // configure the separator line size under the AppBar
       color: Colors.white10,
     ),
     textTheme: TextTheme(

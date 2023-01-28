@@ -8,7 +8,6 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 
 ## Roadmap
 ### Planned Features
-* Add full comments to the code
 * Add Desktop responsive design with opened drawer by default
 * Visual flow-based programming for the automations
 * Theme integration on all screens

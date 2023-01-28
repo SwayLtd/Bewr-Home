@@ -1,4 +1,4 @@
-import 'package:bewr_home/core/localizations.dart';
+import 'package:bewr_home/core/l10n.dart';
 import 'package:bewr_home/features/home/widgets/draggablereorderablegridview.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    // Example of a list of widgets that can be dragged and reordered in a grid
     final List<Widget> listOfWidgets = [
       Card(
         margin: const EdgeInsets.all(10),
@@ -58,7 +59,7 @@ class _HomePageState extends State<HomePage> {
     ];
 
     return Scaffold(
-      body: DraggableReorderableGridView(
+      body: DraggableReorderableGridView( // Widget of a grid of widgets that can be dragged and reordered
         items: listOfWidgets,
       ),
     );

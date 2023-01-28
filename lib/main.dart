@@ -1,6 +1,3 @@
-//SQLite pour stocker des données en local
-//Firebase pour stocker des données à grande échelle ou de synchroniser des données entre plusieurs appareils
-
 import 'package:bewr_home/core/app_theme.dart';
 import 'package:bewr_home/core/routes.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      title: "Bewr Home",
+      debugShowCheckedModeBanner: false, // Remove debug banner
+      title: "Bewr Home", // TO DO: Check if this can be localized
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       routerConfig: router,

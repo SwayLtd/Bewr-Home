@@ -10,15 +10,8 @@ class DevicesPage extends StatefulWidget {
 class _DevicesPageState extends State<DevicesPage> {
   final List<SmartDevice> _devices = [livingLight, thermostat, camera, outlet];
 
-  @override
-  void initState() {
-    super.initState();
-    // Récupérer les informations sur les objets connectés ici
-    // ...
-  }
-
   void _showLampControlBottomSheet() {
-    int lampIntensity = 50;
+    int lampIntensity = 50; // TEST
 
     showModalBottomSheet(
       context: context,
@@ -29,7 +22,7 @@ class _DevicesPageState extends State<DevicesPage> {
           ),
           child: Column(
             children: [
-              const Text('Intensité de la lampe'),
+              const Text('Intensité de la lampe'), // TODO: Localize
               Slider(
                 value: lampIntensity.toDouble(),
                 max: 100,
@@ -71,21 +64,19 @@ class _DevicesPageState extends State<DevicesPage> {
                   IconButton(
                     icon: const Icon(Icons.power_settings_new),
                     onPressed: () {
-                      // Gérer le contrôle de l'objet connecté ici
-                      // ...
+                      // Turn the device on or off here
                     },
                   ),
                   IconButton(
                     icon: const Icon(Icons.settings),
                     onPressed: () {
-                      // Gérer les paramètres de l'objet connecté ici
-                      // ...
+                      // Show the device settings here
                     },
                   ),
                 ],
               ),
               onTap: () {
-                _showLampControlBottomSheet();
+                _showLampControlBottomSheet(); // Show the device control bottom sheet
               },
             ),
           );
@@ -95,11 +86,12 @@ class _DevicesPageState extends State<DevicesPage> {
   }
 }
 
-final livingLight = SmartDevice('Lampe de salon', 'Allumée', Icons.lightbulb_outline);
-final thermostat = SmartDevice('Thermostat', '22°C', Icons.ac_unit);
-final camera = SmartDevice('Caméra de surveillance', 'En ligne', Icons.videocam);
-final outlet = SmartDevice('Prise de salon', 'Allumée', Icons.power_input);
+final livingLight = SmartDevice('Lampe de salon', 'Allumée', Icons.lightbulb_outline); // TODO: Localize
+final thermostat = SmartDevice('Thermostat', '22°C', Icons.ac_unit); // TODO: Localize
+final camera = SmartDevice('Caméra de surveillance', 'En ligne', Icons.videocam); // TODO: Localize
+final outlet = SmartDevice('Prise de salon', 'Allumée', Icons.power_input); // TODO: Localize
 
+// Device model
 class SmartDevice {
   final String name;
   final String status;
