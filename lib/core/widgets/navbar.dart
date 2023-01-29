@@ -41,9 +41,8 @@ class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
     return Scaffold(
       body: widget.child,
       appBar: AppBar(
-        title: Text(
-          "${GoRouter.of(context).location.split("/").last.toString()[0].toUpperCase()}${GoRouter.of(context).location.split("/").last.toString().substring(1).toLowerCase()}",
-        ), // Show the current page title in the AppBar based on the current route path name > Need to find a way to find the name of the current route > TO DO: Localize
+        title: Text(routeName()),
+        // title: Text("${GoRouter.of(context).location.split("/").last.toString()[0].toUpperCase()}${GoRouter.of(context).location.split("/").last.toString().substring(1).toLowerCase()}",), // Show the current page title in the AppBar based on the current route path name > Need to find a way to find the name of the current route > TO DO: Localize
         centerTitle: true, // Center the title in the AppBar
         actions: <Widget>[
           GestureDetector(
