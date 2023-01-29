@@ -1,3 +1,4 @@
+import 'package:bewr_home/core/l10n.dart';
 import 'package:flutter/material.dart';
 
 class TestPage extends StatefulWidget {
@@ -15,16 +16,6 @@ class _TestPageState extends State<TestPage> {
     );
   }
 }
-
-// Example of a list of connected objects
-List<ConnectedObject> connectedObjects = [
-  ConnectedObject('smoke_detector', true, {'location': 'cuisine'}), // TODO: Localize
-  ConnectedObject('oven', true, {'location': 'cuisine'}), // TODO: Localize
-  ConnectedObject('water_leakage_detector', false, {'location': 'cuisine'}), // TODO: Localize
-  ConnectedObject('thermostat', false, {'location': 'cuisine'}), // TODO: Localize
-  ConnectedObject('power_switch', false, {'location': 'cuisine'}), // TODO: Localize
-  ConnectedObject('motion_sensor', true, {'location': 'cuisine'}), // TODO: Localize
-];
 
 // Connected object model
 class ConnectedObject {
@@ -47,11 +38,92 @@ class _SuggestionsWidgetState extends State<SuggestionsWidget> {
   @override
   void initState() {
     super.initState();
-    suggestions = getSuggestions(); // Get the list of suggestions
   }
 
   @override
   Widget build(BuildContext context) {
+    // Example of a list of connected objects
+    final List<ConnectedObject> connectedObjects = [
+      ConnectedObject(
+        'smoke_detector',
+        true,
+        {'location': context.loc.testLocationKitchen},
+      ),
+      ConnectedObject('oven', true,
+          {'location': context.loc.testLocationKitchen},),
+      ConnectedObject(
+        'water_leakage_detector',
+        false,
+        {'location': context.loc.testLocationKitchen},
+      ),
+      ConnectedObject(
+        'thermostat',
+        false,
+        {'location': context.loc.testLocationKitchen},
+      ),
+      ConnectedObject(
+        'power_switch',
+        false,
+        {'location': context.loc.testLocationKitchen},
+      ),
+      ConnectedObject(
+        'motion_sensor',
+        true,
+        {'location': context.loc.testLocationKitchen},
+      ),
+    ];
+
+    // Function that returns a list of suggestions based on the connected objects list and their states and other information
+    List<String> getSuggestions(List connected) {
+      final List<String> suggestions = [];
+      final List<ConnectedObject> connectedObjects =
+          connected as List<ConnectedObject>;
+
+      // Browse each connected object and add a suggestion if it meets certain conditions between them
+      for (final ConnectedObject obj1 in connectedObjects) {
+        for (final ConnectedObject obj2 in connectedObjects) {
+          if (obj1.type == 'smoke_detector' &&
+              obj1.state == true &&
+              obj2.type == 'oven' &&
+              obj2.state == true) {
+            suggestions.add(
+              context.loc.testSuggestion1,
+            );
+          }
+          if (obj1.type == 'thermostat' &&
+              obj1.state == true &&
+              obj2.type == 'sensor_temp' &&
+              obj2.state == true) {
+            suggestions.add(
+              context.loc.testSuggestion2,
+            );
+          }
+          if (obj1.type == 'power_switch' &&
+              obj1.state == false &&
+              obj2.type == 'motion_sensor' &&
+              obj2.state == true) {
+            suggestions.add(
+              context.loc.testSuggestion3,
+            );
+          }
+        }
+      }
+
+      // Browse each connected object and add a suggestion if it meets certain conditions
+      for (final ConnectedObject obj in connectedObjects) {
+        if (obj.type == 'water_leakage_detector' && obj.state == false) {
+          suggestions.add(
+            context.loc.testSuggestion4,
+          );
+        }
+      }
+
+      return suggestions;
+    }
+
+    suggestions =
+        getSuggestions(connectedObjects); // Get the list of suggestions
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: ListView.builder(
@@ -74,33 +146,4 @@ class _SuggestionsWidgetState extends State<SuggestionsWidget> {
       ),
     );
   }
-}
-
-// Function that returns a list of suggestions based on the connected objects list and their states and other information
-List<String> getSuggestions() {
-  final List<String> suggestions = [];
-
-  // Browse each connected object and add a suggestion if it meets certain conditions between them
-  for (final ConnectedObject obj1 in connectedObjects) {
-    for (final ConnectedObject obj2 in connectedObjects) {
-      if (obj1.type == 'smoke_detector' && obj1.state == true && obj2.type == 'oven' && obj2.state == true) {
-        suggestions.add('Ajouter une automatisation pour éteindre le oven en cas de détection de fumée par le détecteur de fumée'); // TODO: Localize
-      }
-      if (obj1.type == 'thermostat' && obj1.state == true && obj2.type == 'sensor_temp' && obj2.state == true) {
-        suggestions.add('Ajouter une automatisation pour ouvrir les fenêtres de la cuisine lorsque la température de la pièce dépasse un certain seuil'); // TODO: Localize
-      }
-      if (obj1.type == 'power_switch' && obj1.state == false && obj2.type == 'motion_sensor' && obj2.state == true) {
-        suggestions.add('Ajouter une automatisation pour allumer la lumière de la cuisine lorsque le détecteur de mouvement détecte du mouvement la nuit'); // TODO: Localize
-      }
-    }
-  }
-
-  // Browse each connected object and add a suggestion if it meets certain conditions
-  for (final ConnectedObject obj in connectedObjects) {
-    if (obj.type == 'water_leakage_detector' && obj.state == false) {
-      suggestions.add("Buy a water leak detector to be informed immediately in case of a water leak in your kitchen"); // TODO: Localize
-    }
-  }
-
-  return suggestions;
 }

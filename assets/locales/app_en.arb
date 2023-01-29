@@ -60,14 +60,23 @@
 
 
 
-	"devicesLightIntensity": "Light Intensity",
+	"devicesLightIntensity": "Light intensity",
 	
 	"devicesStateON": "ON",
 	"devicesStateOFF": "OFF",
 	"devicesStateONLINE": "ONLINE",
 	"devicesStateOFFLINE": "OFFLINE",
 	"devicesStateCONNECTING": "CONNECTING",
-	"devicesStateTemperature": "X °C",
+	"devicesStateTemperature": "{value} °C",
+	"@devicesStateTemperature": {
+		"description": "Temperature value",
+		"placeholders": {
+			"value": {
+				"type": "int",
+				"format": "compact"
+			}
+		}
+	},
 
 	"devicesNameLight": "Living light",
 	"devicesNameThermostat": "Thermostat",

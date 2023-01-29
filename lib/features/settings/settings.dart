@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
-  
+
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
@@ -13,43 +13,53 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
+    bool notificationsEnabled = true; // TODO: Get from shared_preferences
+    String language = context.loc.settingsLanguageFrench; // TODO: Get from shared_preferences
+    int temperatureUnit = 0; // TODO: Get from shared_preferences
+
     return Scaffold(
       // Other ideas: Dark mode, Alarm volume, Geolocation, Time zone, Animations, Advanced mode
       body: ListView(
         children: <Widget>[
           SwitchListTile(
             title: Text(context.loc.settingsNotifications),
-            value: _notificationsEnabled,
+            value: notificationsEnabled,
             onChanged: (value) {
               setState(() {
-                _notificationsEnabled = value;
+                notificationsEnabled = value;
               });
             },
           ),
           ListTile(
             title: Text(context.loc.settingsLanguage),
             trailing: DropdownButton<String>(
-              value: _language,
+              value: language,
               onChanged: (value) {
                 setState(() {
-                  _language = value!;
+                  language = value!;
                 });
-              },           
-              items: [context.loc.settingsLanguageEnglish, context.loc.settingsLanguageFrench, context.loc.settingsLanguageSpanish]
-                  .map((language) => DropdownMenuItem(
-                        value: language,
-                        child: Text(language),
-                      ),)
+              },
+              items: [
+                context.loc.settingsLanguageEnglish,
+                context.loc.settingsLanguageFrench,
+                context.loc.settingsLanguageSpanish
+              ]
+                  .map(
+                    (language) => DropdownMenuItem(
+                      value: language,
+                      child: Text(language),
+                    ),
+                  )
                   .toList(),
             ),
           ),
           ListTile(
             title: Text(context.loc.settingsTemperatureUnit),
             trailing: DropdownButton<int>(
-              value: _temperatureUnit,
+              value: temperatureUnit,
               onChanged: (value) {
                 setState(() {
-                  _temperatureUnit = value!;
+                  temperatureUnit = value!;
                 });
               },
               items: [
@@ -69,7 +79,3 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 }
-
-bool _notificationsEnabled = true; // TODO: Get from shared_preferences
-String _language = 'Français'; // TODO: Get from shared_preferences // TODO: Localize
-int _temperatureUnit = 0; // TODO: Get from shared_preferences

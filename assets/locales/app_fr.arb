@@ -67,7 +67,16 @@
 	"devicesStateONLINE": "EN LIGNE",
 	"devicesStateOFFLINE": "HORS LIGNE",
 	"devicesStateCONNECTING": "CONNEXION",
-	"devicesStateTemperature": "X °C",
+	"devicesStateTemperature": "{value} °C",
+	"@devicesStateTemperature": {
+		"description": "Valeur de température",
+		"placeholders": {
+			"value": {
+				"type": "int",
+				"format": "compact"
+			}
+		}
+	},
 
 	"devicesNameLight": "Lumière du salon",
 	"devicesNameThermostat": "Thermostat",

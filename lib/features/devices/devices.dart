@@ -1,3 +1,4 @@
+import 'package:bewr_home/core/l10n.dart';
 import 'package:flutter/material.dart';
 
 class DevicesPage extends StatefulWidget {
@@ -8,51 +9,60 @@ class DevicesPage extends StatefulWidget {
 }
 
 class _DevicesPageState extends State<DevicesPage> {
-  final List<SmartDevice> _devices = [light, thermostat, camera, outlet];
-
-  void _showLampControlBottomSheet() {
-    int lampIntensity = 50; // TEST
-
-    showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxHeight: 500,
-          ),
-          child: Column(
-            children: [
-              const Text('Intensité de la lampe'), // TODO: Localize
-              Slider(
-                value: lampIntensity.toDouble(),
-                max: 100,
-                onChanged: (double newIntensity) {
-                  setState(() {
-                    lampIntensity = newIntensity.round();
-                  });
-                },
-              ),
-            ],
-          ),
-        );
-      },
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
-        ),
-      ),
-      isDismissible: true,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
+    void showLampControlBottomSheet() {
+      int lampIntensity = 50;
+
+      showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxHeight: 500,
+            ),
+            child: Column(
+              children: [
+                Text(context.loc.devicesLightIntensity),
+                Slider(
+                  value: lampIntensity.toDouble(),
+                  max: 100,
+                  onChanged: (double newIntensity) {
+                    setState(() {
+                      lampIntensity = newIntensity.round();
+                    });
+                  },
+                ),
+              ],
+            ),
+          );
+        },
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(16),
+            topRight: Radius.circular(16),
+          ),
+        ),
+        isDismissible: true,
+      );
+    }
+
+   final light = SmartDevice(
+        context.loc.devicesNameLight, context.loc.devicesStateON, Icons.lightbulb_outline,);
+    final thermostat =
+        SmartDevice(context.loc.devicesNameThermostat, context.loc.devicesStateTemperature(22), Icons.ac_unit);
+    final camera = SmartDevice(
+        context.loc.devicesNameCamera, context.loc.devicesStateONLINE, Icons.videocam,);
+    final outlet = SmartDevice(
+        context.loc.devicesNameOutlet, context.loc.devicesStateON, Icons.power_input,);
+
+    final List<SmartDevice> devices = [light, thermostat, camera, outlet];
+
     return Scaffold(
       body: ListView.builder(
-        itemCount: _devices.length,
+        itemCount: devices.length,
         itemBuilder: (context, index) {
-          final device = _devices[index];
+          final device = devices[index];
           return Card(
             child: ListTile(
               leading: Icon(device.icon),
@@ -76,7 +86,7 @@ class _DevicesPageState extends State<DevicesPage> {
                 ],
               ),
               onTap: () {
-                _showLampControlBottomSheet(); // Show the device control bottom sheet
+                showLampControlBottomSheet(); // Show the device control bottom sheet
               },
             ),
           );
@@ -85,11 +95,6 @@ class _DevicesPageState extends State<DevicesPage> {
     );
   }
 }
-
-final light = SmartDevice('Lampe de salon', 'Allumée', Icons.lightbulb_outline); // TODO: Localize
-final thermostat = SmartDevice('Thermostat', '22°C', Icons.ac_unit); // TODO: Localize
-final camera = SmartDevice('Caméra de surveillance', 'En ligne', Icons.videocam); // TODO: Localize
-final outlet = SmartDevice('Prise de salon', 'Allumée', Icons.power_input); // TODO: Localize
 
 // Device model
 class SmartDevice {
