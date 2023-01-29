@@ -121,52 +121,34 @@ final GoRouter router = GoRouter(
   errorBuilder: (context, state) => const HomePage(), // TODO: Add error screen
 );
 
+final routes = [
+  {'path': '/home', 'index': 0, 'name': 'Home'},
+  {'path': '/devices', 'index': 1, 'name': 'Devices'},
+  {'path': '/automations', 'index': 2, 'name': 'Automations'},
+  {'path': '/activity', 'index': 3, 'name': 'Activity'},
+  {'path': '/settings', 'index': 4, 'name': 'Settings'},
+  {'path': '/feedback', 'index': 5, 'name': 'Feedback'},
+  {'path': '/help', 'index': 6, 'name': 'Help'},
+  {'path': '/test', 'index': 7, 'name': 'Test'},
+];
+
 // Return the current route name
 String routeName() {
-  final routes = {
-    '/home': 'Home',
-    '/devices': 'Devices',
-    '/automations': 'Automations',
-    '/activity': 'Activity',
-    '/settings': 'Settings',
-    '/feedback': 'Feedback',
-    '/help': 'Help',
-    '/test': 'Test',
-  };
-
-  return routes[router.location] ?? "Error"; // TODO: Add error screen
+  final route = routes.firstWhere((route) => route['path'] == router.location, orElse: () => routes.first);
+  return route['name'] as String ?? "Error"; // TODO: Add error screen
 }
 
 // Returns the index of the current screen
 int selectedIndex() {
-  final routes = {
-    '/home': 0,
-    '/devices': 1,
-    '/automations': 2,
-    '/activity': 3,
-    '/settings': 4,
-    '/feedback': 5,
-    '/help': 6,
-    '/test': 7,
-  };
-
-  return routes[router.location] ?? 0; // TODO: Add error screen
+  final route = routes.firstWhere((route) => route['path'] == router.location, orElse: () => routes.first);
+  return route['index'] as int ?? 0; // TODO: Add error screen
 }
 
 // Navigates to the screen corresponding to the index
 void onTap(BuildContext context, int index) {
-  final routes = {
-    0: '/home',
-    1: '/devices',
-    2: '/automations',
-    3: '/activity',
-    4: '/settings',
-    5: '/feedback',
-    6: '/help',
-    7: '/test',
-  };
+  final route = routes.firstWhere((route) => route['index'] == index, orElse: () => routes.first);
 
   // context.push as been used instead of context.go because it works better with the back button
   // Need to check if this is not creating a loop when we are faking the index for the bottom navigation bar
-  return context.push(routes[index] ?? "/home"); // TODO: Add error screen
+  return context.push(route['path'] as String ?? "/home"); // TODO: Add error screen
 }
