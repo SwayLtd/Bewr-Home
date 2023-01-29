@@ -1,4 +1,5 @@
 // https://github.com/flutter/packages/blob/main/packages/go_router/example/lib/shell_route.dart
+// https://blog.codemagic.io/flutter-go-router-guide/
 
 import 'package:bewr_home/core/widgets/appbar.dart';
 import 'package:bewr_home/core/widgets/navbar.dart';
@@ -11,15 +12,14 @@ import 'package:bewr_home/features/home/home.dart';
 import 'package:bewr_home/features/settings/settings.dart';
 import 'package:bewr_home/features/test/test.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-final _rootNavigatorKey = GlobalKey<NavigatorState>();
+final rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
-  navigatorKey: _rootNavigatorKey,
+  navigatorKey: rootNavigatorKey,
   initialLocation: '/home',
   routes: [
     ShellRoute(
@@ -113,6 +113,7 @@ final GoRouter router = GoRouter(
       ],
     ),
   ],
+  errorBuilder: (context, state) => const HomePage(), // TODO: Add error screen
 );
 
 int selectedIndex() { // Returns the index of the current page
