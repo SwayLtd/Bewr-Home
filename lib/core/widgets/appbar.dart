@@ -111,7 +111,8 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
       appBar: AppBar(
         title: Text(context.loc.appbarTitle),
         actions: <Widget>[
-          GestureDetector(
+          InkWell(
+            borderRadius: BorderRadius.circular(30),
             onTap: () {
               // Access user settings
               setState(() {
@@ -120,7 +121,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
             },
             child: Container(
               margin: const EdgeInsets.only(
-                  right: 7.5,), // // Add some margin to the right of the avatar
+                  left: 7.5, right: 7.5,), // // Add some margin to the right of the avatar
               child: const CircleAvatar(
                 backgroundImage: NetworkImage(
                   'https://avatars.githubusercontent.com/u/21986104', // TODO: Get user avatar

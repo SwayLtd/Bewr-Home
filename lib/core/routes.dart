@@ -2,6 +2,7 @@
 // https://blog.codemagic.io/flutter-go-router-guide/
 
 import 'package:bewr_home/core/widgets/appbar.dart';
+import 'package:bewr_home/core/widgets/sidemenu.dart';
 import 'package:bewr_home/core/widgets/navbar.dart';
 import 'package:bewr_home/features/activity/activity.dart';
 import 'package:bewr_home/features/automations/automations.dart';
@@ -36,22 +37,36 @@ final GoRouter router = GoRouter(
                 child: ScaffoldWithNavBar(child: child),
               ),
               ResponsiveVisibility(
-                // Show app bar only on tablets and desktops (larger than MOBILE)
+                // Show app bar only on tablet (between MOBILE and DESKTOP)
                 hiddenWhen: const [
                   Condition.smallerThan(name: TABLET),
+                  Condition.largerThan(name: TABLET),
                 ],
                 child: ScaffoldWithAppBar(child: child),
+              ),
+              ResponsiveVisibility(
+                // Show side menu only on desktop (larger than TABLET)
+                hiddenWhen: const [
+                  Condition.smallerThan(name: DESKTOP),
+                ],
+                child: ScaffoldWithSideMenu(child: child),
               ),
             ],
           ),
           defaultScale: true,
           breakpoints: const [
-            ResponsiveBreakpoint.resize(480,
-                name: MOBILE,), // 480 is the default size
-            ResponsiveBreakpoint.autoScale(800,
-                name: TABLET,), // 800 is the default size
-            ResponsiveBreakpoint.resize(1000,
-                name: DESKTOP,), // 1000 is the default size
+            ResponsiveBreakpoint.autoScale(
+              480,
+              name: MOBILE,
+            ), // 480 is the default size
+            ResponsiveBreakpoint.autoScale(
+              750,
+              name: TABLET,
+            ), // 800 is the default size
+            ResponsiveBreakpoint.autoScale(
+              1150,
+              name: DESKTOP,
+            ), // 1000 is the default size
             ResponsiveBreakpoint.autoScale(2460, name: '4K'),
           ],
         );
@@ -134,21 +149,33 @@ final routes = [
 
 // Return the current route name
 String routeName() {
-  final route = routes.firstWhere((route) => route['path'] == router.location, orElse: () => routes.first);
+  final route = routes.firstWhere(
+    (route) => route['path'] == router.location,
+    orElse: () => routes.first,
+  );
   return route['name'] as String ?? "Error"; // TODO: Add error screen
 }
 
-// Returns the index of the current screen
+// Return the index of the current screen
 int selectedIndex() {
-  final route = routes.firstWhere((route) => route['path'] == router.location, orElse: () => routes.first);
+  final route = routes.firstWhere(
+    (route) => route['path'] == router.location,
+    orElse: () => routes.first,
+  );
   return route['index'] as int ?? 0; // TODO: Add error screen
 }
 
-// Navigates to the screen corresponding to the index
+// Navigate to the screen corresponding to the index
 void onTap(BuildContext context, int index) {
-  final route = routes.firstWhere((route) => route['index'] == index, orElse: () => routes.first);
+  final route = routes.firstWhere(
+    (route) => route['index'] == index,
+    orElse: () => routes.first,
+  );
 
   // context.push as been used instead of context.go because it works better with the back button
   // Need to check if this is not creating a loop when we are faking the index for the bottom navigation bar
-  return context.push(route['path'] as String ?? "/home"); // TODO: Add error screen
+  return () {
+    context.push(route['path'] as String ?? '/home'); // TODO: Add error screen
+    Navigator.maybePop(context); // Close the drawer
+  }();
 }

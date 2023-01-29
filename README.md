@@ -8,9 +8,8 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 
 ## Roadmap
 ### Planned Features
-* Desktop responsive design (with opened drawer by default)
-* Routing update to a tree from "/home" to "/" path.
 * Theme integration on all screens
+* Routing update to a tree from "/home" to "/" path.
 * Visual flow-based programming for the automations
 * Analytics and error reporting
 * Implementing notification
@@ -19,7 +18,7 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 * Welcome screen
 
 ### Implemented Features
-* Responsive design for mobile and tablet
+* Responsive design for mobile, tablet and desktop
 * Localization (English and French)
 * App theme integration (light and dark)
 * Route management with GoRouter

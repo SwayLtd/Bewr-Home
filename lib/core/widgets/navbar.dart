@@ -1,8 +1,6 @@
 import 'package:bewr_home/core/l10n.dart';
 import 'package:bewr_home/core/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:go_router/go_router.dart';
 
 class ScaffoldWithNavBar extends StatefulWidget {
   const ScaffoldWithNavBar({super.key, required this.child});
@@ -38,6 +36,7 @@ class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
         label: context.loc.bottomnavbarAutomations,
       ),
     ];
+
     return Scaffold(
       body: widget.child,
       appBar: AppBar(
@@ -45,7 +44,8 @@ class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
         // title: Text("${GoRouter.of(context).location.split("/").last.toString()[0].toUpperCase()}${GoRouter.of(context).location.split("/").last.toString().substring(1).toLowerCase()}",), // Show the current page title in the AppBar based on the current route path name > Need to find a way to find the name of the current route > TO DO: Localize
         centerTitle: true, // Center the title in the AppBar
         actions: <Widget>[
-          GestureDetector(
+          InkWell(
+            borderRadius: BorderRadius.circular(30),
             onTap: () {
               // Access user settings screen
               setState(() {
@@ -54,6 +54,7 @@ class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
             },
             child: Container(
               margin: const EdgeInsets.only(
+                  left: 7.5,
                   right: 7.5), // Add some margin to the right of the avatar
               child: const CircleAvatar(
                 backgroundImage: NetworkImage(
@@ -61,7 +62,7 @@ class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
