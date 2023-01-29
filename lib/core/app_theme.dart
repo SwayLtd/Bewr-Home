@@ -11,6 +11,7 @@ class AppTheme {
     brightness: Brightness.light,
     fontFamily: GoogleFonts.spaceGrotesk().fontFamily,
     disabledColor: Colors.black54,
+    scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
       // https://stackoverflow.com/questions/52489458/how-to-change-status-bar-color-in-flutter
       systemOverlayStyle: SystemUiOverlayStyle(
@@ -62,6 +63,7 @@ class AppTheme {
     brightness: Brightness.dark,
     fontFamily: GoogleFonts.spaceGrotesk().fontFamily,
     disabledColor: Colors.white70,
+    scaffoldBackgroundColor: Colors.black54,
     appBarTheme: const AppBarTheme(
       // https://stackoverflow.com/questions/52489458/how-to-change-status-bar-color-in-flutter
       systemOverlayStyle: SystemUiOverlayStyle(
