@@ -28,4 +28,4 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 See the [open issues](https://github.com/BewrApp/Bewr-Home/issues) for a list of proposed features (and known issues).
 
 ## Multi-platform
-Currently under development for Android and iOS. A web and desktop version will be adapted.
+Currently under development for Android, iOS, iPadOS and web. A desktop version will be adapted.
