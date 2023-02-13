@@ -224,11 +224,12 @@ class _SideNavigationBarState extends State<SideNavigationBar> {
 
     // Toggler is provided, use it
     if (widget.toggler != null) {
+      final SideBarToggler barToggler = SideBarToggler();
       return SideBarTogglerWidget(
         togglerTheme: _theme.togglerTheme,
         togglerData: widget.toggler!,
         expanded: _expanded,
-        onToggle: () => setState(() => toggle()),
+        onToggle: () => setState(() => toggle(barToggler)),
         visible: widget.toggler!.visible,
       );
     } else {
@@ -238,7 +239,7 @@ class _SideNavigationBarState extends State<SideNavigationBar> {
         togglerTheme: _theme.togglerTheme,
         togglerData: barToggler,
         expanded: _expanded,
-        onToggle: () => setState(() => toggle()),
+        onToggle: () => setState(() => toggle(barToggler)),
         visible: widget.toggler!.visible,
       );
     }
@@ -309,7 +310,7 @@ class _SideNavigationBarState extends State<SideNavigationBar> {
 
 /// Toggles this widget. Determine width here for now.
 /// Optionally calls a [SideBarToggler.onToggle] call to react to [_expanded] changes
-void toggle() {
+void toggle(SideBarToggler toggler) {
   if (_expanded) {
     _width = _minWidth;
   } else {
@@ -317,5 +318,5 @@ void toggle() {
   }
   _expanded = !_expanded;
   // Check if a custom onToggle is provided and call after (or before?) internal logic
-  //widget.toggler?.onToggle?.call();
+  toggler.onToggle?.call();
 }

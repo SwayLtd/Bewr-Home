@@ -1,4 +1,4 @@
-import 'package:bewr_home/core/l10n.dart';
+import 'package:bewr_home/core/constants/l10n.dart';
 import 'package:bewr_home/core/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +41,6 @@ class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
       body: widget.child,
       appBar: AppBar(
         title: Text(routeName()),
-        // title: Text("${GoRouter.of(context).location.split("/").last.toString()[0].toUpperCase()}${GoRouter.of(context).location.split("/").last.toString().substring(1).toLowerCase()}",), // Show the current page title in the AppBar based on the current route path name > Need to find a way to find the name of the current route > TO DO: Localize
         centerTitle: true, // Center the title in the AppBar
         actions: <Widget>[
           InkWell(
@@ -54,8 +53,9 @@ class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar> {
             },
             child: Container(
               margin: const EdgeInsets.only(
-                  left: 7.5,
-                  right: 7.5), // Add some margin to the right of the avatar
+                left: 7.5,
+                right: 7.5,
+              ), // Add some margin to the right of the avatar
               child: const CircleAvatar(
                 backgroundImage: NetworkImage(
                   'https://avatars.githubusercontent.com/u/21986104', // TODO: Get user avatar

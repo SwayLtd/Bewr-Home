@@ -1,8 +1,8 @@
-import 'package:bewr_home/core/l10n.dart';
+import 'package:bewr_home/core/constants/l10n.dart';
 import 'package:flutter/material.dart';
 
-class HelpPage extends StatelessWidget {
-  const HelpPage({super.key});
+class HelpScreen extends StatelessWidget {
+  const HelpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

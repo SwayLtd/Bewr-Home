@@ -1,14 +1,14 @@
-import 'package:bewr_home/core/l10n.dart';
+import 'package:bewr_home/core/constants/l10n.dart';
 import 'package:flutter/material.dart';
 
 class DevicesPage extends StatefulWidget {
   const DevicesPage({super.key});
 
   @override
-  _DevicesPageState createState() => _DevicesPageState();
+  _DevicesScreenState createState() => _DevicesScreenState();
 }
 
-class _DevicesPageState extends State<DevicesPage> {
+class _DevicesScreenState extends State<DevicesScreen> {
   @override
   Widget build(BuildContext context) {
     void showLampControlBottomSheet() {

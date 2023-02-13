@@ -1,14 +1,14 @@
-import 'package:bewr_home/core/l10n.dart';
+import 'package:bewr_home/core/constants/l10n.dart';
 import 'package:flutter/material.dart';
 
-class FeedbackPage extends StatefulWidget {
-  const FeedbackPage({super.key});
+class FeedbackScreen extends StatefulWidget {
+  const FeedbackScreen({super.key});
 
   @override
-  _FeedbackPageState createState() => _FeedbackPageState();
+  _FeedbackScreenState createState() => _FeedbackScreenState();
 }
 
-class _FeedbackPageState extends State<FeedbackPage> {
+class _FeedbackScreenState extends State<FeedbackScreen> {
   final _formKey = GlobalKey<FormState>();
   final List<Attachment> _attachments = [];
 

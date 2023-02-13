@@ -69,7 +69,7 @@ class SideNavigationBarItemTheme {
     this.unselectedItemColor,
     this.selectedBackgroundColor,
     this.unselectedBackgroundColor,
-    this.iconShape = const CircleBorder(),
+    this.iconShape = const ContinuousRectangleBorder(),
     this.iconSize,
     this.labelTextStyle,
   });
@@ -90,14 +90,14 @@ class SideNavigationBarTogglerTheme {
   /// If nothing or null is passed it defaults to native brightness colors
   final Color? shrinkIconColor;
 
-  const SideNavigationBarTogglerTheme(
-      {this.expandIconColor, this.shrinkIconColor,});
+  const SideNavigationBarTogglerTheme({
+    this.expandIconColor,
+    this.shrinkIconColor,
+  });
 
   /// Default theme
   factory SideNavigationBarTogglerTheme.standard() =>
-      const SideNavigationBarTogglerTheme(
-        
-      );
+      const SideNavigationBarTogglerTheme();
 }
 
 class SideNavigationBarDividerTheme {

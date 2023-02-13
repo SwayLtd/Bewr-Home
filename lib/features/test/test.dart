@@ -1,14 +1,14 @@
-import 'package:bewr_home/core/l10n.dart';
+import 'package:bewr_home/core/constants/l10n.dart';
 import 'package:flutter/material.dart';
 
-class TestPage extends StatefulWidget {
-  const TestPage({super.key});
+class TestScreen extends StatefulWidget {
+  const TestScreen({super.key});
 
   @override
-  _TestPageState createState() => _TestPageState();
+  _TestScreenState createState() => _TestScreenState();
 }
 
-class _TestPageState extends State<TestPage> {
+class _TestScreenState extends State<TestScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -135,10 +135,7 @@ class _SuggestionsWidgetState extends State<SuggestionsWidget> {
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 suggestions[index],
-                style: const TextStyle(
-                  fontSize: 18.0,
-                  color: Colors.black,
-                ),
+                style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
           );

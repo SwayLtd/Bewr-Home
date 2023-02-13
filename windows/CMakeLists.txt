@@ -1,3 +1,6 @@
+# Recreate the CMakeCache.txt file if the CMakeLists.txt file has changed using "flutter clean" command and then run "flutter pub get" command.
+# https://stackoverflow.com/questions/14458805/editing-versus-deleting-cmakecache-txt-after-moving-directory
+
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
 project(bewr_home LANGUAGES CXX)

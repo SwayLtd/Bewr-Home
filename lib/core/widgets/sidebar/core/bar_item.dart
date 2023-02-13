@@ -55,23 +55,8 @@ class _SideNavigationBarItemWidgetState
       waitDuration: const Duration(seconds: 1),
       message: widget.itemData.label,
       child: widget.expanded
-          ? /*ListTile(
-              tileColor: _evaluateBackgroundColor(isSelected),
-              leading: Icon(
-                widget.itemData.icon,
-                color: currentColor,
-                size: widget.itemTheme.iconSize,
-              ),
-              title: Text(
-                widget.itemData.label,
-                style: _evaluateTextStyle(currentColor),
-              ),
-              onTap: () {
-                widget.onTap(widget.index);
-              },
-            )*/
-          InkWell(
-              borderRadius: BorderRadius.circular(10),
+          ? InkWell(
+              customBorder: widget.itemTheme.iconShape,
               onTap: () {
                 widget.onTap(widget.index);
               },
@@ -95,15 +80,17 @@ class _SideNavigationBarItemWidgetState
                           widget.onTap(widget.index);
                         },
                       ),
-                      Text(widget.itemData.label,
-                          style: _evaluateTextStyle(currentColor)),
+                      Text(
+                        widget.itemData.label,
+                        style: _evaluateTextStyle(currentColor),
+                      ),
                     ],
                   ),
                 ),
               ),
             )
           : Material(
-              color: Colors.transparent, 
+              color: Colors.transparent,
               child: Ink(
                 decoration: ShapeDecoration(
                   color: _evaluateBackgroundColor(isSelected),

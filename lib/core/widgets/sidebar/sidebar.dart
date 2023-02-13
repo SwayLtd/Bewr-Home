@@ -1,17 +1,17 @@
-import 'package:bewr_home/core/l10n.dart';
+import 'package:bewr_home/core/constants/l10n.dart';
 import 'package:bewr_home/core/routes.dart';
 import 'package:bewr_home/core/widgets/sidebar/side_navigation.dart';
 import 'package:flutter/material.dart';
 
-class ScaffoldWithSideMenu extends StatefulWidget {
-  const ScaffoldWithSideMenu({super.key, required this.child});
+class ScaffoldWithSideBar extends StatefulWidget {
+  const ScaffoldWithSideBar({super.key, required this.child});
   final Widget child;
 
   @override
-  State<ScaffoldWithSideMenu> createState() => _ScaffoldWithSideMenuState();
+  State<ScaffoldWithSideBar> createState() => _ScaffoldWithSideBarState();
 }
 
-class _ScaffoldWithSideMenuState extends State<ScaffoldWithSideMenu> {
+class _ScaffoldWithSideBarState extends State<ScaffoldWithSideBar> {
   int _currentIndex = 0;
 
   @override
@@ -41,22 +41,33 @@ class _ScaffoldWithSideMenuState extends State<ScaffoldWithSideMenu> {
         icon: Icons.feedback_outlined,
         label: context.loc.drawerFeedback,
       ),
+      SideNavigationBarItem(
+        icon: Icons.help_outline,
+        label: context.loc.drawerHelp,
+      ),
+      SideNavigationBarItem(
+        icon: Icons.checklist_outlined,
+        label: context.loc.drawerTest,
+      ),
     ];
+
+    final SideBarToggler barToggler = SideBarToggler(
+      visible: false,
+      expandIcon: Icons.menu,
+      shrinkIcon: Icons.close,
+      // onToggle: () => print('toggled'),
+    );
 
     return Scaffold(
       body: Row(
         // The Row is needed to display the current view
         children: [
-          /// SideNavigationBar is similar to BottomNavigationBar
+          // SideNavigationBar is similar to BottomNavigationBar
           SideNavigationBar(
-            toggler: SideBarToggler(
-              visible: false,
-              expandIcon: Icons.menu,
-              shrinkIcon: Icons.close,
-            ),
+            toggler: barToggler,
             theme: SideNavigationBarTheme(
               backgroundColor: Theme.of(context)
-                  .scaffoldBackgroundColor, // TODO: Need to refresh automatically when theme changes
+                  .scaffoldBackgroundColor, // TODO: Refresh automatically when theme changes
               togglerTheme: SideNavigationBarTogglerTheme(
                 expandIconColor: Theme.of(context).iconTheme.color,
                 shrinkIconColor: Theme.of(context).iconTheme.color,
@@ -66,9 +77,7 @@ class _ScaffoldWithSideMenuState extends State<ScaffoldWithSideMenu> {
                 unselectedItemColor: Theme.of(context).iconTheme.color,
                 selectedBackgroundColor:
                     Theme.of(context).primaryColor.withOpacity(0.5),
-                iconShape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
+                 //iconShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),),
               ),
               dividerTheme: SideNavigationBarDividerTheme.standard(),
             ),
@@ -92,10 +101,11 @@ class _ScaffoldWithSideMenuState extends State<ScaffoldWithSideMenu> {
       ),
       appBar: AppBar(
         title: Text(context.loc.appbarTitle),
+        // Hamburger menu icon to toggle the side navigation bar
         leading: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {
-            setState(() => toggle());
+            setState(() => toggle(barToggler));
           },
         ),
         actions: <Widget>[
@@ -109,8 +119,9 @@ class _ScaffoldWithSideMenuState extends State<ScaffoldWithSideMenu> {
             },
             child: Container(
               margin: const EdgeInsets.only(
-                  left: 7.5,
-                  right: 7.5), // // Add some margin to the right of the avatar
+                left: 7.5,
+                right: 7.5,
+              ), // // Add some margin to the right of the avatar
               child: const CircleAvatar(
                 backgroundImage: NetworkImage(
                   'https://avatars.githubusercontent.com/u/21986104', // TODO: Get user avatar

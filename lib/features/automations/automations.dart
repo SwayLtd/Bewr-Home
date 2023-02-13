@@ -1,8 +1,8 @@
-import 'package:bewr_home/core/l10n.dart';
+import 'package:bewr_home/core/constants/l10n.dart';
 import 'package:flutter/material.dart';
 
-class AutomationsPage extends StatelessWidget {
-  const AutomationsPage({super.key});
+class AutomationsScreen extends StatelessWidget {
+  const AutomationsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
