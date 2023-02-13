@@ -7,9 +7,9 @@ Our technology allows us to offer a unique experience in terms of controlling an
 By choosing Bewr Home, you benefit from a high-quality open-source and multi-platform smart home application that will help you simplify your daily life and enjoy a smarter and more connected home.
 
 ## Screenshots
-![Mobile screenshot](/assets/screenshots/mobile.png)
-![Tablet screenshot](/assets/screenshots/tablet.png)
-![Desktop screenshot](/assets/screenshots/desktop.png)
+![Mobile screenshot](/assets/images/screenshots/mobile.png)
+![Tablet screenshot](/assets/images/screenshots/tablet.png)
+![Desktop screenshot](/assets/images/screenshots/desktop.png)
 
 ## Roadmap
 ### Planned Features
