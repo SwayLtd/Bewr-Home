@@ -6,13 +6,18 @@ Our technology allows us to offer a unique experience in terms of controlling an
 
 By choosing Bewr Home, you benefit from a high-quality open-source and multi-platform smart home application that will help you simplify your daily life and enjoy a smarter and more connected home.
 
+## Screenshots
+![Mobile screenshot](/assets/screenshots/mobile.png)
+![Tablet screenshot](/assets/screenshots/tablet.png)
+![Desktop screenshot](/assets/screenshots/desktop.png)
+
 ## Roadmap
 ### Planned Features
-* [BLoC architecture](https://www.youtube.com/watch?v=Ep6R7U9wa0U)
 * Shared preferences
 * [Accessibility v2](https://docs.flutter.dev/development/accessibility-and-localization/accessibility) (tooltips on all buttons, [semantics](https://medium.com/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc) (labels, merge and exclude)
 * Adaptive: changing functionality based on platform's capabilities (e.g. using native adaptive method and "[adaptive_dialog](https://pub.dev/packages/adaptive_dialog)" package)
 * Visual flow-based programming for the automations
+* [BLoC architecture](https://youtu.be/Ep6R7U9wa0U)
 * Welcome screen with [authentication](https://bloclibrary.dev/#/flutterfirebaselogintutorial)
 * Onboarding
 * Analytics and error reporting (+ error screens)

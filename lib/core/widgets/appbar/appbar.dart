@@ -124,7 +124,7 @@ class _ScaffoldWithAppBarState extends State<ScaffoldWithAppBar> {
               margin: const EdgeInsets.only(
                 left: 7.5,
                 right: 7.5,
-              ), // // Add some margin to the right of the avatar
+              ), // Add some margin to the edges of the avatar
               child: const CircleAvatar(
                 backgroundImage: NetworkImage(
                   'https://avatars.githubusercontent.com/u/21986104', // TODO: Get user avatar
