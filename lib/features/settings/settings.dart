@@ -3,11 +3,11 @@
 import 'package:bewr_home/core/l10n.dart';
 import 'package:flutter/material.dart';
 
-class SettingsPage extends StatefulWidget {
-  const SettingsPage({super.key});
+class SettingsScreen extends StatefulWidget {
+  const SettingsScreen({super.key});
 
   @override
-  _SettingsPageState createState() => _SettingsPageState();
+  _SettingsScreenState createState() => _SettingsScreenState();
 }
 
 // TODO: Get from shared_preferences

@@ -1,8 +1,8 @@
 import 'package:bewr_home/core/constants/l10n.dart';
 import 'package:flutter/material.dart';
 
-class DevicesPage extends StatefulWidget {
-  const DevicesPage({super.key});
+class DevicesScreen extends StatefulWidget {
+  const DevicesScreen({super.key});
 
   @override
   _DevicesScreenState createState() => _DevicesScreenState();
