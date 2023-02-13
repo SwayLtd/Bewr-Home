@@ -10,18 +10,52 @@ class SettingsPage extends StatefulWidget {
   _SettingsPageState createState() => _SettingsPageState();
 }
 
-class _SettingsPageState extends State<SettingsPage> {
+// TODO: Get from shared_preferences
+String theme = "System";
+bool notificationsEnabled = true;
+int temperatureUnit = 0; 
+String language = "Français";
+
+class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
-    bool notificationsEnabled = true; // TODO: Get from shared_preferences
-    String language = context.loc.settingsLanguageFrench; // TODO: Get from shared_preferences
-    int temperatureUnit = 0; // TODO: Get from shared_preferences
-
     return Scaffold(
       // Other ideas: Dark mode, Alarm volume, Geolocation, Time zone, Animations, Advanced mode
       body: ListView(
         children: <Widget>[
-          SwitchListTile(
+          ListTile(
+            title: Text(context.loc.settingsAppTheme),
+            trailing: DropdownButton<String>(
+              value: theme,
+              onChanged: (value) {
+                setState(() {
+                  theme = value!;
+                });
+                if (value == context.loc.settingsAppThemeSystem) {
+                  AdaptiveTheme.of(context).setSystem();
+                } else if (value == context.loc.settingsAppThemeLight) {
+                  AdaptiveTheme.of(context).setLight();
+                } else if (value == context.loc.settingsAppThemeDark) {
+                  AdaptiveTheme.of(context).setDark();
+                } else {
+                  AdaptiveTheme.of(context).setSystem();
+                }
+              },
+              items: [
+                context.loc.settingsAppThemeSystem,
+                context.loc.settingsAppThemeLight,
+                context.loc.settingsAppThemeDark
+              ]
+                  .map(
+                    (theme) => DropdownMenuItem(
+                      value: theme,
+                      child: Text(theme),
+                    ),
+                  )
+                  .toList(),
+            ),
+          ),
+          SwitchListTile.adaptive(
             title: Text(context.loc.settingsNotifications),
             value: notificationsEnabled,
             onChanged: (value) {

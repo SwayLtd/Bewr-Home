@@ -8,7 +8,6 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 
 ## Roadmap
 ### Planned Features
-* Theme integration on all screens
 * Routing update to a tree from "/home" to "/" path.
 * Visual flow-based programming for the automations
 * Analytics and error reporting
@@ -18,12 +17,19 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 * Welcome screen
 
 ### Implemented Features
+* Theme integration
 * Responsive design for mobile, tablet and desktop
 * Localization (English and French)
 * App theme integration (light and dark)
 * Route management with GoRouter
 * BLoC architecture
 * Feature-First file structure
+
+### Last Updates
+* Theme switching in the settings.
+
+### Known Issues
+* Side bar theme is not changing when switching theme.
 
 See the [open issues](https://github.com/BewrApp/Bewr-Home/issues) for a list of proposed features (and known issues).
 

@@ -1,32 +1,34 @@
 name: bewr_home
 description: Bewr Home is an open-source and multi-platform smart home application that stands out by proactively suggesting ways to improve your smart home and make your connected objects smarter.
 
-publish_to: 'none'
+publish_to: "none"
 
-version: 0.0.4 # Add responsive design support
+version: 0.0.6+1 # Responsive design (+ routes update)
 
 environment:
-  sdk: '>=2.18.5 <3.0.0'
+  sdk: ">=2.18.5 <3.0.0"
 
 dependencies:
+  adaptive_theme: ^3.1.1
   cupertino_icons: ^1.0.2
   dotted_border: ^2.0.0+3
-  # firebase_messaging: ^14.2.1
+  equatable: ^2.0.5
+  firebase_messaging: ^14.2.1
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.2
   flutter_localizations:
     sdk: flutter
   flutter_shake_animated: ^0.0.5
-  go_router: ^6.0.0
-  google_fonts: ^3.0.1
+  go_router: ^6.0.6
+  google_fonts: ^4.0.3
   intl: ^0.17.0
   responsive_framework: ^0.2.0
-  shared_preferences: ^2.0.15
-  # side_navigation: ^1.0.4 # Alternative: flutter_slider_drawer
+  shared_preferences: ^2.0.17
   url_strategy: ^0.2.0
 
 dev_dependencies:
-  analyzer: ^5.0.0
+  analyzer: ^5.4.0
   firebase_crashlytics: ^3.0.11
   flutter_driver:
     sdk: flutter
@@ -34,7 +36,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   lint: ^2.0.1
-  openapi_generator: ^4.0.0
   plausible_analytics: ^0.2.1
   test: ^1.22.0
 

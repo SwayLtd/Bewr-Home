@@ -1,3 +1,10 @@
+/*
+https://m2.material.io/design/platform-guidance/cross-platform-adaptation.html
+https://www.youtube.com/watch?v=7bljwicODeY
+.adaptive() on certain widgets > Slider, SwitchListTile, Switch, ActivityIndicator, AlertDialog and certain Icon
++ https://pub.dev/packages/adaptive_dialog
+*/
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,7 +13,13 @@ class AppTheme {
   AppTheme._();
 
   static ThemeData light = ThemeData(
-    primaryColor: Colors.amberAccent,
+    primaryColor: Colors.amber,
+    colorScheme: const ColorScheme.light(
+      primary: Colors.amber,
+      secondary: Colors.amberAccent,
+      error: Colors.red,
+      onPrimary: Colors.black,
+    ),
     primarySwatch: Colors.amber,
     brightness: Brightness.light,
     fontFamily: GoogleFonts.spaceGrotesk().fontFamily,
@@ -36,7 +49,7 @@ class AppTheme {
       headlineSmall:
           GoogleFonts.spaceGrotesk(fontSize: 24, fontWeight: FontWeight.w400),
       titleLarge: GoogleFonts.spaceGrotesk(
-          fontSize: 20, fontWeight: FontWeight.w500, letterSpacing: 0.15,),
+          fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 0.15,),
       titleMedium: GoogleFonts.spaceGrotesk(
           fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 0.15,),
       titleSmall: GoogleFonts.spaceGrotesk(
@@ -58,7 +71,16 @@ class AppTheme {
   );
 
   static ThemeData dark = ThemeData(
-    primaryColor: Colors.amberAccent,
+    primaryColor: Colors.amber,
+    colorScheme: const ColorScheme.dark(
+      primary: Colors.amber,
+      secondary: Colors.amberAccent,
+      surface: Colors.black54,
+      background: Colors.black54,
+      error: Colors.red,
+      onPrimary: Colors.white,
+      onSecondary: Colors.white,
+    ),
     primarySwatch: Colors.amber,
     brightness: Brightness.dark,
     fontFamily: GoogleFonts.spaceGrotesk().fontFamily,
