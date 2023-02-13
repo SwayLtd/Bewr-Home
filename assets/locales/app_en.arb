@@ -21,12 +21,18 @@
 	"drawerSettings": "Settings",
 	"drawerFeedback": "Feedback",
 	"drawerHelp": "Help",
+	"drawerTest": "Test",
 
 	"appbarTitle": "Bewr",
 
 	"bottomAppbarHome": "Home",
 	"bottomAppbarDevices": "Devices",
 	"bottomAppbarAutomations": "Automations",
+	"bottomAppbarActivity": "Activity",
+	"bottomAppbarSettings": "Settings",
+	"bottomAppbarFeedback": "Feedback",
+	"bottomAppbarHelp": "Help",
+	"bottomAppbarTest": "Test",
 
 
 
@@ -105,7 +111,10 @@
 	"helpHelpAssistance": "Help and assistance",
 
 
-
+	"settingsAppTheme": "Application theme",
+		"settingsAppThemeLight": "Light",
+		"settingsAppThemeDark": "Dark",
+		"settingsAppThemeSystem": "System",
 	"settingsNotifications": "Notifications",
 	"settingsLanguage": "Language",
 		"settingsLanguageEnglish": "English",

@@ -26,6 +26,16 @@ final GoRouter router = GoRouter(
     ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (BuildContext context, GoRouterState state, Widget child) {
+        // Localizing road names
+        routes[0]['name'] = context.loc.routesNameHome;
+        routes[1]['name'] = context.loc.routesNameDevices;
+        routes[2]['name'] = context.loc.routesNameAutomations;
+        routes[3]['name'] = context.loc.routesNameActivity;
+        routes[4]['name'] = context.loc.routesNameSettings;
+        routes[5]['name'] = context.loc.routesNameHelp;
+        routes[6]['name'] = context.loc.routesNameFeedback;
+        routes[7]['name'] = context.loc.routesNameTest;
+
         return ResponsiveWrapper.builder(
           Stack(
             children: <Widget>[

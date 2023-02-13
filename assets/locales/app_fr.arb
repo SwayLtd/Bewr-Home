@@ -21,12 +21,18 @@
 	"drawerSettings": "Paramètres",
 	"drawerFeedback": "Commentaires",
 	"drawerHelp": "Aide",
+	"drawerTest": "Test",
 
 	"appbarTitle": "Bewr",
 
 	"bottomAppbarHome": "Maison",
 	"bottomAppbarDevices": "Appareils",
 	"bottomAppbarAutomations": "Routines",
+	"bottomAppbarActivity": "Activités",
+	"bottomAppbarSettings": "Paramètres",
+	"bottomAppbarFeedback": "Commentaires",
+	"bottomAppbarHelp": "Aide",
+	"bottomAppbarTest": "Test",
 
 
 
@@ -106,6 +112,10 @@
 
 
 
+	"settingsAppTheme": "Thème de l'application",
+		"settingsAppThemeLight": "Clair",
+		"settingsAppThemeDark": "Sombre",
+		"settingsAppThemeSystem": "Sytème",
 	"settingsNotifications": "Notifications",
 	"settingsLanguage": "Langue",
 		"settingsLanguageEnglish": "English",
