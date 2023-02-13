@@ -65,8 +65,13 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                     Text(context.loc.feedbackAttachement),
                     TextButton(
                       child: Text(context.loc.feedbackAttachementPlaceholder),
+                      // TODO: Implement file picker here
                       onPressed: () {
-                        // TODO: Implement file picker
+                        const snackBar = SnackBar(
+                          content: Text('Attach a file here'),
+                        );
+                        // Find the ScaffoldMessenger in the widget tree and use it to show a SnackBar.
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       },
                     ),
                   ],
@@ -81,8 +86,14 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                       title: Text(attachment.name),
                       trailing: IconButton(
                         icon: const Icon(Icons.delete),
+                        tooltip: 'Delete attachment', // TODO: localize
+                        // TODO: Implement delete attachment
                         onPressed: () {
-                          // TODO: Implement delete attachment
+                          const snackBar = SnackBar(
+                            content: Text('Delete the attachment here'),
+                          );
+                          // Find the ScaffoldMessenger in the widget tree and use it to show a SnackBar.
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         },
                       ),
                     );
@@ -92,8 +103,13 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   margin: const EdgeInsets.only(top: 16),
                   child: TextButton(
                     child: Text(context.loc.feedbackSubmit),
+                    // TODO: Implement send feedback
                     onPressed: () {
-                      // TODO: Implement send feedback
+                      const snackBar = SnackBar(
+                        content: Text('Submit the feedback here'),
+                      );
+                      // Find the ScaffoldMessenger in the widget tree and use it to show a SnackBar.
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
                   ),
                 ),

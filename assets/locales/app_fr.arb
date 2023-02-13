@@ -24,6 +24,7 @@
 	"drawerTest": "Test",
 
 	"appbarTitle": "Bewr",
+	"appbarMenuIconTooltip": "Icône de menu hamburger pour basculer l'affichage de la barre de navigation latérale",
 
 	"bottomAppbarHome": "Maison",
 	"bottomAppbarDevices": "Appareils",
@@ -63,6 +64,8 @@
 	"routineDescriptionLeaving": "Éteind les lumières et mettez le téléviseur en veille.",
 	"routineDescriptionFilm": "Allume la télévision et la barre de son",
 	"routineDescriptionDinner": "Allume les lumières de la cuisine et mettez de la musique",
+
+	"routineCreate": "Créer une routine",
 
 
 

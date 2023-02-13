@@ -76,6 +76,7 @@ class _SideNavigationBarItemWidgetState
                           color: currentColor,
                           size: widget.itemTheme.iconSize,
                         ),
+                        tooltip: "Navigate to ${widget.itemData.label}",
                         onPressed: () {
                           widget.onTap(widget.index);
                         },
@@ -102,6 +103,7 @@ class _SideNavigationBarItemWidgetState
                     color: currentColor,
                     size: widget.itemTheme.iconSize,
                   ),
+                  tooltip: "Navigate to ${widget.itemData.label}",
                   onPressed: () {
                     widget.onTap(widget.index);
                   },

@@ -47,14 +47,23 @@ class _DevicesScreenState extends State<DevicesScreen> {
       );
     }
 
-   final light = SmartDevice(
-        context.loc.devicesNameLight, context.loc.devicesStateON, Icons.lightbulb_outline,);
-    final thermostat =
-        SmartDevice(context.loc.devicesNameThermostat, context.loc.devicesStateTemperature(22), Icons.ac_unit);
+    final light = SmartDevice(
+      context.loc.devicesNameLight,
+      context.loc.devicesStateON,
+      Icons.lightbulb_outline,
+    );
+    final thermostat = SmartDevice(context.loc.devicesNameThermostat,
+        context.loc.devicesStateTemperature(22), Icons.ac_unit);
     final camera = SmartDevice(
-        context.loc.devicesNameCamera, context.loc.devicesStateONLINE, Icons.videocam,);
+      context.loc.devicesNameCamera,
+      context.loc.devicesStateONLINE,
+      Icons.videocam,
+    );
     final outlet = SmartDevice(
-        context.loc.devicesNameOutlet, context.loc.devicesStateON, Icons.power_input,);
+      context.loc.devicesNameOutlet,
+      context.loc.devicesStateON,
+      Icons.power_input,
+    );
 
     final List<SmartDevice> devices = [light, thermostat, camera, outlet];
 
@@ -73,14 +82,24 @@ class _DevicesScreenState extends State<DevicesScreen> {
                 children: <Widget>[
                   IconButton(
                     icon: const Icon(Icons.power_settings_new),
+                    tooltip: 'Turn the device on or off', // TODO: localize
                     onPressed: () {
-                      // Turn the device on or off here
+                      const snackBar = SnackBar(
+                        content: Text('Turn the device on or off here'),
+                      );
+                      // Find the ScaffoldMessenger in the widget tree and use it to show a SnackBar.
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
                   ),
                   IconButton(
                     icon: const Icon(Icons.settings),
+                    tooltip: 'Show the device settings', // TODO: localize
                     onPressed: () {
-                      // Show the device settings here
+                      const snackBar = SnackBar(
+                        content: Text('Show the device settings here'),
+                      );
+                      // Find the ScaffoldMessenger in the widget tree and use it to show a SnackBar.
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
                   ),
                 ],

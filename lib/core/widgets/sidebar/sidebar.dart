@@ -55,7 +55,7 @@ class _ScaffoldWithSideBarState extends State<ScaffoldWithSideBar> {
       visible: false,
       expandIcon: Icons.menu,
       shrinkIcon: Icons.close,
-      // onToggle: () => print('toggled'),
+      // onToggle: () => debugPrint('toggled'),
     );
 
     return Scaffold(
@@ -101,8 +101,9 @@ class _ScaffoldWithSideBarState extends State<ScaffoldWithSideBar> {
       ),
       appBar: AppBar(
         title: Text(context.loc.appbarTitle),
-        // Hamburger menu icon to toggle the side navigation bar
+        // Hamburger menu icon to toggle the side navigation bar display
         leading: IconButton(
+          tooltip: context.loc.appbarMenuIconTooltip,
           icon: const Icon(Icons.menu),
           onPressed: () {
             setState(() => toggle(barToggler));

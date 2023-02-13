@@ -23,6 +23,7 @@ class BewrHome extends StatelessWidget {
       initial: AdaptiveThemeMode.system,
       builder: (theme, darkTheme) => MaterialApp.router(
         debugShowCheckedModeBanner: false, // Remove debug banner
+        // showSemanticsDebugger: true, // Show Semantics Debugger on screen
         onGenerateTitle: (BuildContext context) => context.loc.title,
         theme: theme,
         darkTheme: darkTheme,

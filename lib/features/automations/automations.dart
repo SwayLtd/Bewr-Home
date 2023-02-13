@@ -21,7 +21,11 @@ class AutomationsScreen extends StatelessWidget {
             description: context.loc.routineDescriptionWakeup,
             icon: Icons.alarm,
             onPressed: () {
-              // Launch the wake up routine here
+              const snackBar = SnackBar(
+                content: Text('Launch the wakeup routine here'),
+              );
+              // Find the ScaffoldMessenger in the widget tree and use it to show a SnackBar.
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
           ),
           RoutineTile(
@@ -29,7 +33,11 @@ class AutomationsScreen extends StatelessWidget {
             description: context.loc.routineDescriptionLeaving,
             icon: Icons.commute,
             onPressed: () {
-              // Launch the departure routine here
+              const snackBar = SnackBar(
+                content: Text('Launch the leaving routine here'),
+              );
+              // Find the ScaffoldMessenger in the widget tree and use it to show a SnackBar.
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
           ),
           Container(
@@ -44,7 +52,11 @@ class AutomationsScreen extends StatelessWidget {
             description: context.loc.routineDescriptionFilm,
             icon: Icons.movie,
             onPressed: () {
-              // Launch the movie routine here
+              const snackBar = SnackBar(
+                content: Text('Launch the film routine here'),
+              );
+              // Find the ScaffoldMessenger in the widget tree and use it to show a SnackBar.
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
           ),
           RoutineTile(
@@ -52,14 +64,23 @@ class AutomationsScreen extends StatelessWidget {
             description: context.loc.routineDescriptionDinner,
             icon: Icons.restaurant,
             onPressed: () {
-              // Launch the dinner routine here
+              const snackBar = SnackBar(
+                content: Text('Launch the dinner routine here'),
+              );
+              // Find the ScaffoldMessenger in the widget tree and use it to show a SnackBar.
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        tooltip: context.loc.routineCreate,
         onPressed: () {
-          // Open the automation creation page here
+          const snackBar = SnackBar(
+            content: Text('Open the routine creation screen here'),
+          );
+          // Find the ScaffoldMessenger in the widget tree and use it to show a SnackBar.
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
         child: const Icon(Icons.add),
       ),

@@ -24,6 +24,7 @@
 	"drawerTest": "Test",
 
 	"appbarTitle": "Bewr",
+	"appbarMenuIconTooltip": "Hamburger menu icon to toggle the side navigation bar display",
 
 	"bottomAppbarHome": "Home",
 	"bottomAppbarDevices": "Devices",
@@ -63,6 +64,8 @@
 	"routineDescriptionLeaving": "Turn off the lights and put the TV on standby",
 	"routineDescriptionFilm": "Turn on the TV and soundbar",
 	"routineDescriptionDinner": "Turn on the kitchen lights and play music",
+
+	"routineCreate": "Create a routine",
 
 
 

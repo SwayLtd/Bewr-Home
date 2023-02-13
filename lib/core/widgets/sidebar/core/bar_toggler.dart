@@ -44,6 +44,7 @@ class _SideBarTogglerWidgetState extends State<SideBarTogglerWidget> {
               ? widget.togglerTheme.shrinkIconColor
               : widget.togglerTheme.expandIconColor,
         ),
+        tooltip: "Menu icon to toggle the side navigation bar display",
         onPressed: widget.onToggle,
       ),
     );
