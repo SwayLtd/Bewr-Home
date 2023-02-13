@@ -13,28 +13,25 @@ class ActivityScreen extends StatelessWidget {
             leading: const Icon(Icons.check_circle),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children:  [
                 Text(
-                  'Tâche 1',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  'Task 1',
+                  style: Theme.of(context).textTheme.labelLarge,
                 ),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
                 Text(
                   'Dec 10, 12:00',
                   style: TextStyle(
                     color: Colors.white60,
-                    fontSize: 14,
+                    fontSize: Theme.of(context).textTheme.labelLarge?.fontSize,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   'Description 2',
                   style: TextStyle(
                     color: Colors.grey,
-                    fontSize: 14,
+                    fontSize: Theme.of(context).textTheme.labelLarge?.fontSize,
                   ),
                 ),
               ],
@@ -51,28 +48,25 @@ class ActivityScreen extends StatelessWidget {
             leading: const Icon(Icons.info),
             title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
-                    'Tâche 2',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    'Task 2',
+                    style: Theme.of(context).textTheme.labelLarge,
                   ),
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Text(
                     'Dec 10, 11:00',
                     style: TextStyle(
                       color: Colors.white60,
-                      fontSize: 14,
+                      fontSize: Theme.of(context).textTheme.labelLarge?.fontSize,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     'Description 2',
                     style: TextStyle(
                       color: Colors.grey,
-                      fontSize: 14,
+                      fontSize: Theme.of(context).textTheme.labelLarge?.fontSize,
                     ),
                   ),
                 ],
@@ -89,37 +83,32 @@ class ActivityScreen extends StatelessWidget {
             leading: const Icon(Icons.check_circle),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
-                  'Tâche 3',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  'Task 3',
+                  style: Theme.of(context).textTheme.labelLarge,
                 ),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
                 Text(
                   'Dec 10, 10:00',
                   style: TextStyle(
                     color: Colors.white60,
-                    fontSize: 14,
+                    fontSize: Theme.of(context).textTheme.labelLarge?.fontSize,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   'Description 3',
                   style: TextStyle(
                     color: Colors.grey,
-                    fontSize: 14,
+                    fontSize: Theme.of(context).textTheme.labelLarge?.fontSize,
                   ),
                 ),
               ],
             ),
             trailing: IconButton(
               icon: const Icon(Icons.more_vert),
-              onPressed: () {
-                
-              },
+              onPressed: () {},
             ),
           ),
         ],

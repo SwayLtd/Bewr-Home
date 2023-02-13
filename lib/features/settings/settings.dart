@@ -1,6 +1,7 @@
 // Use shared_preferences package to store some settings
 
-import 'package:bewr_home/core/l10n.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:bewr_home/core/constants/l10n.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatefulWidget {

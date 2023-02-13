@@ -24,7 +24,7 @@ class _DevicesScreenState extends State<DevicesScreen> {
             child: Column(
               children: [
                 Text(context.loc.devicesLightIntensity),
-                Slider(
+                Slider.adaptive(
                   value: lampIntensity.toDouble(),
                   max: 100,
                   onChanged: (double newIntensity) {
