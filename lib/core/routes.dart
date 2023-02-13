@@ -16,8 +16,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-final rootNavigatorKey = GlobalKey<NavigatorState>();
-final _shellNavigatorKey = GlobalKey<NavigatorState>();
+final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
+final _shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'shell');
 
 final GoRouter router = GoRouter(
   navigatorKey: rootNavigatorKey,
@@ -144,6 +144,7 @@ final GoRouter router = GoRouter(
     ),
   ],
   errorBuilder: (context, state) => const HomePage(), // TODO: Add error screen
+  errorBuilder: (context, state) => NotFoundError(state.error),
 );
 
 final routes = [
