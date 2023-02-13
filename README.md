@@ -8,7 +8,6 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 
 ## Roadmap
 ### Planned Features
-* Routing update to a tree from "/home" to "/" path.
 * Visual flow-based programming for the automations
 * Analytics and error reporting
 * Implementing notification
@@ -26,6 +25,7 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 * Feature-First file structure
 
 ### Last Updates
+* Routing update to a tree from "/home" to "/" path.
 * Theme switching in the settings.
 
 ### Known Issues
