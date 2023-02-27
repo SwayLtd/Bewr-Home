@@ -24,6 +24,9 @@ By choosing Bewr Home, you benefit from a high-quality open-source and multi-pla
 * Implementing notification
 * Building all screens
 * Third-party integrations
+* Community powered products user manual, scan receipts
+* To-Do list per room
+* Energy supplier management
 
 ### Implemented Features
 * [Accessibility v1](https://docs.flutter.dev/development/accessibility-and-localization/accessibility)
